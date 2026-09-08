@@ -1,14 +1,14 @@
 # Fatec Women app
 
-O aplicativo foi desenvolvido, pela Fatec Rio Claro, para ajudar a Secretaria Municipal da Mulher a registrar casos de violência contra mulheres.
+O projeto é um aplicativo desenvolvido pela Fatec Rio Claro para ajudar a Secretaria Municipal da Mulher a registrar casos de violência contra mulheres.
 
 ## O que é?
 
-Serviço para atendimento às mulheres e meninas vítimas de violência sexual, com organização e humanização do atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes de violência sexual, oferecendo uma atenção integral a estas clientes.
+Serviço para atendimento às mulheres e meninas vítimas de violência, com organização e humanização do atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes de violência, oferecendo uma atenção integral a estas.
 
 ## Quem pode utilizar este serviço?
 
-Mulheres e meninas vítimas de violência sexual.
+Mulheres e meninas vítimas de violência.
 
 ## Faça download do aplicativo
 

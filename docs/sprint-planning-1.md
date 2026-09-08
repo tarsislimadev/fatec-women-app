@@ -1,29 +1,27 @@
-# Planejamento da Sprint 1: Fundação e Infraestrutura Básica
+# Sprint 1 Planning: Foundation & Infrastructure
 
-## Objetivo
-Estabelecer a infraestrutura central do aplicativo Fatec Women, garantindo que o ambiente de desenvolvimento seja reprodutível e que as bases de Frontend, Backend e Banco de Dados estejam configuradas.
+## Objective
+Establish the core technical foundation of the application, ensuring that the development environment is containerized and the basic architectural patterns are in place.
 
-## Backlog da Sprint
+## Scope
+- **Environment Setup**: Implementation of Docker and Docker Compose for consistent local development.
+- **Backend Initialization**: Creating the Express.js server with TypeScript.
+- **Database Layer**: Initializing the PostgreSQL database and defining the base schema.
 
-### 1. Infraestrutura e DevOps
-- [ ] Configurar ambiente de banco de dados PostgreSQL utilizando Docker.
-- [ ] Implementar servidor de backend utilizando Node.js, Express e TypeScript.
-- [ ] Criar arquivo `docker-compose.yaml` para orquestração dos serviços (API e DB).
+## Planning Details
+- **Technical Stack**:
+  - Runtime: Node.js
+  - Language: TypeScript
+  - Framework: Express.js
+  - Database: PostgreSQL
+  - Orchestration: Docker Compose
+- **Critical Path**:
+  1. Docker configuration $\rightarrow$ Database availability $\rightarrow$ API Connectivity.
+- **Risks**:
+  - Compatibility issues with Docker on Windows.
+  - Schema migration overhead.
 
-### 2. Desenvolvimento Mobile (Frontend)
-- [ ] Inicializar projeto Flutter com arquitetura limpa.
-- [ ] Implementar `AppScaffold` para padronização de layout.
-- [ ] Desenvolver Tela de Boas-vindas (Landing Screen).
-- [ ] Desenvolver Telas de Login e Cadastro (Sign-up).
-- [ ] Configurar `go_router` para navegação entre telas.
-
-### 3. Serviços Core e Estilização
-- [ ] Definir identidade visual e tema do aplicativo em `app_theme.dart`.
-- [ ] Implementar `flutter_secure_storage` para persistência de tokens e dados sensíveis.
-- [ ] Criar serviço base de requisições HTTP (`api.dart`).
-
-## Critérios de Aceite
-- O ambiente de desenvolvimento deve subir completamente via `docker-compose up`.
-- O usuário deve ser capaz de navegar da Landing Screen para Login/Cadastro.
-- O tema visual deve ser aplicado consistentemente em todas as telas implementadas.
-- O serviço de API deve ser capaz de realizar requisições básicas ao backend.
+## Expected Outcomes
+- [ ] A fully operational `docker-compose.yaml` file.
+- [ ] Basic API structure capable of responding to health checks.
+- [ ] Database tables created via initialization scripts.

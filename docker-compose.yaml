@@ -1,29 +1,29 @@
 services:
   mobile:
-    build: ./src/mobile
+    build: './src/mobile'
     ports:
-      - "8080:8080"
+      - '8080:8080'
     volumes:
       - './src/mobile:/app'
     depends_on:
-      - api
+      - 'api'
 
   api:
-    build: ./src/api
+    build: './src/api'
     environment:
-      - PORT=3000
+      - 'PORT=3000'
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - './src/api:/app'
     depends_on:
-      - database
+      - 'database'
 
   database:
-    build: ./src/database
+    build: './src/database'
     environment:
-      POSTGRES_USER: fatec
-      POSTGRES_PASSWORD: fatec
-      POSTGRES_DB: fatec
+      - 'POSTGRES_USER=fatec'
+      - 'POSTGRES_PASSWORD=fatec'
+      - 'POSTGRES_DB=fatec'
     ports:
-      - "5432:5432"
+      - '5432:5432'

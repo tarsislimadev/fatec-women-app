@@ -1,17 +1,17 @@
-# Sprint 1: Foundation and Setup
-## Goals
-- Setup project structure
-- Configure Docker environment
-- Initialize API with Express.js and TypeScript
-- Setup Database schema
+# Sprint 1: Fundação e Configuração
+## Objetivos
+- Configurar a estrutura do projeto
+- Configurar o ambiente Docker
+- Inicializar a API com Express.js e TypeScript
+- Configurar o esquema do Banco de Dados
 
-## Tasks
-- [ ] Initialize Git repository
-- [ ] Create `docker-compose.yaml`
-- [ ] Setup API Dockerfile
-- [ ] Setup Database Dockerfile
-- [ ] Define initial tables in `001-create-tables.sql`
+## Tarefas
+- [ ] Inicializar repositório Git
+- [ ] Criar `docker-compose.yaml`
+- [ ] Configurar Dockerfile da API
+- [ ] Configurar Dockerfile do Banco de Dados
+- [ ] Definir tabelas iniciais em `001-create-tables.sql`
 
-## Deliverables
-- Running API and Database in Docker
-- Basic API "Hello World" endpoint
+## Entregáveis
+- API e Banco de Dados rodando no Docker
+- Endpoint básico "Hello World" da API

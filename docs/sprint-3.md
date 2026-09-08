@@ -1,17 +1,17 @@
-# Sprint 3: Refinement and Deployment
-## Goals
-- Finalize API endpoints
-- Perform integration testing
-- Optimize Docker images for production
-- Documentation completion
+# Sprint 3: Refinamento e Implantação
+## Objetivos
+- Finalizar endpoints da API
+- Realizar testes de integração
+- Otimizar imagens Docker para produção
+- Conclusão da documentação
 
-## Tasks
-- [ ] Implement remaining business features
-- [ ] Write integration tests for core flows
-- [ ] Optimize Dockerfiles (multi-stage builds)
-- [ ] Finalize `README.md` and project docs
+## Tarefas
+- [ ] Implementar funcionalidades de negócio restantes
+- [ ] Escrever testes de integração para fluxos principais
+- [ ] Otimizar Dockerfiles (multi-stage builds)
+- [ ] Finalizar `README.md` e documentos do projeto
 
-## Deliverables
-- Production-ready API
-- Full test coverage report
-- Complete project documentation
+## Entregáveis
+- API pronta para produção
+- Relatório completo de cobertura de testes
+- Documentação completa do projeto

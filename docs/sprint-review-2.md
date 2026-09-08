@@ -1,19 +1,19 @@
-# Sprint 2 Review: Core Feature Implementation
+# Revisão da Sprint 2: Implementação de Funcionalidades Principais
 
-## Summary
-Sprint 2 focused on transforming the basic API into a functional system by implementing user authentication and database persistence.
+## Resumo
+A Sprint 2 focou em transformar a API básica em um sistema funcional, implementando a autenticação de usuários e a persistência de dados.
 
-## Accomplishments
-- [x] Implemented JWT (JSON Web Token) authentication for secure API access.
-- [x] Developed Signup and Login endpoints with password hashing using bcrypt.
-- [x] Integrated the Express API with PostgreSQL for persistent user storage.
-- [x] Added request validation middleware to ensure data integrity.
+## Conquistas
+- [x] Implementação de autenticação JWT (JSON Web Token) para acesso seguro à API.
+- [x] Desenvolvimento de endpoints de Cadastro e Login com hashing de senhas usando bcrypt.
+- [x] Integração da API Express com PostgreSQL para armazenamento persistente de usuários.
+- [x] Adição de middleware de validação de requisição para garantir a integridade dos dados.
 
-## Challenges & Lessons Learned
-- **Challenge**: Handling token expiration and refresh logic.
-- **Solution**: Implemented a standard JWT expiration window and created a clear error response for expired tokens.
-- **Lesson**: Validation should occur as early as possible in the request lifecycle to reduce unnecessary database load.
+## Desafios e Lições Aprendidas
+- **Desafio**: Manipulação da expiração de tokens e lógica de renovação.
+- **Solução**: Implementação de uma janela de expiração JWT padrão e criação de uma resposta de erro clara para tokens expirados.
+- **Lição**: A validação deve ocorrer o mais cedo possível no ciclo de vida da requisição para reduzir a carga desnecessária no banco de dados.
 
-## Final Status
-- **Status**: Completed
-- **Approval**: Approved for transition to Sprint 3.
+## Status Final
+- **Status**: Concluído
+- **Aprovação**: Aprovado para transição para a Sprint 3.

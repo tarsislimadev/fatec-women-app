@@ -1,15 +1,15 @@
-# Sprint 2: Core API Development
-## Goals
-- Implement User authentication
-- Develop primary business logic endpoints
-- Integrate API with Database
+# Sprint 2: Desenvolvimento da API Principal
+## Objetivos
+- Implementar autenticação de Usuário
+- Desenvolver endpoints principais de lógica de negócio
+- Integrar a API com o Banco de Dados
 
-## Tasks
-- [ ] Implement User Signup and Login
-- [ ] Create User profiles API
-- [ ] Setup middleware for authentication (JWT)
-- [ ] Validate request data using Zod or Joi
+## Tarefas
+- [ ] Implementar Cadastro e Login de Usuário
+- [ ] Criar API de perfis de Usuário
+- [ ] Configurar middleware para autenticação (JWT)
+- [ ] Validar dados de requisição usando Zod ou Joi
 
-## Deliverables
-- Functional Authentication system
-- API documentation for User endpoints
+## Entregáveis
+- Sistema de Autenticação funcional
+- Documentação da API para endpoints de Usuário

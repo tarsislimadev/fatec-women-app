@@ -1,24 +1,24 @@
-# Sprint 2 Planning: Core Feature Implementation
+# Planejamento da Sprint 2: Implementação de Funcionalidades Principais
 
-## Objective
-Transition from infrastructure setup to functional development, focusing on the critical path of user management and data persistence.
+## Objetivo
+Transitar da configuração de infraestrutura para o desenvolvimento funcional, focando no caminho crítico de gerenciamento de usuários e persistência de dados.
 
-## Scope
-- **Authentication System**: implementing JWT-based authentication and password hashing.
-- **User Management**: endpoints for registration, profile updates, and login.
-- **Data Integration**: connecting the Express API to the PostgreSQL database using an ORM or query builder.
+## Escopo
+- **Sistema de Autenticação**: implementação de autenticação baseada em JWT e hashing de senhas.
+- **Gerenciamento de Usuários**: endpoints para registro, atualização de perfil e login.
+- **Integração de Dados**: conexão da API Express ao banco de dados PostgreSQL usando um ORM ou construtor de consultas.
 
-## Planning Details
-- **Design Decisions**:
-  - Use bcrypt for secure password storage.
-  - Implement a middleware layer for protecting private routes.
-- **Development Workflow**:
-  - Define API contracts $\rightarrow$ Implement controllers $\rightarrow$ Integrate Database $\rightarrow$ Test.
-- **Risks**:
-  - Security vulnerabilities in the auth flow.
-  - Database connection pooling issues.
+## Detalhes do Planejamento
+- **Decisões de Design**:
+  - Usar bcrypt para armazenamento seguro de senhas.
+  - Implementar uma camada de middleware para proteger rotas privadas.
+- **Fluxo de Desenvolvimento**:
+  - Definir contratos da API $\rightarrow$ Implementar controllers $\rightarrow$ Integrar Banco de Dados $\rightarrow$ Testar.
+- **Riscos**:
+  - Vulnerabilidades de segurança no fluxo de autenticação.
+  - Problemas de pooling de conexão com o banco de dados.
 
-## Expected Outcomes
-- [ ] Functional Login/Signup endpoints.
-- [ ] Token-based access control implemented across the API.
-- [ ] User data correctly persisted and retrieved from the database.
+## Resultados Esperados
+- [ ] Endpoints de Login/Cadastro funcionais.
+- [ ] Controle de acesso baseado em token implementado em toda a API.
+- [ ] Dados de usuário persistidos e recuperados corretamente do banco de dados.

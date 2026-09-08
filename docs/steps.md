@@ -1,6 +1,6 @@
-# create expressjs typescript
+# criar expressjs typescript
 
-To create an **Express.js** application with **TypeScript**, initialize a new project and install the core framework along with TypeScript and its type definitions as development dependencies.
+Para criar uma aplicação **Express.js** com **TypeScript**, inicialize um novo projeto e instale o framework principal junto com o TypeScript e suas definições de tipo como dependências de desenvolvimento.
 
 ```bash
 npm init -y
@@ -8,7 +8,7 @@ npm install express
 npm install -D typescript @types/node @types/express tsx
 ```
 
-Create a `tsconfig.json` file by running `npx tsc --init` and ensure the `outDir` is set to a build folder (e.g., `"./dist"`). Next, create a source file (e.g., `src/index.ts`) with the following structure:
+Crie um arquivo `tsconfig.json` executando `npx tsc --init` e certifique-se de que o `outDir` esteja configurado para uma pasta de build (ex: `"./dist"`). Em seguida, crie um arquivo de origem (ex: `src/index.ts`) com a seguinte estrutura:
 
 ```typescript
 import express, { Request, Response } from 'express';
@@ -25,7 +25,7 @@ app.listen(PORT, () => {
 });
 ```
 
-Finally, add scripts to `package.json` to compile and run the server, or use `tsx` for direct execution during development:
+Finalmente, adicione scripts ao `package.json` para compilar e executar o servidor, ou use `tsx` para execução direta durante o desenvolvimento:
 
 ```json
 "scripts": {

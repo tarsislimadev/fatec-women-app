@@ -1,27 +1,27 @@
-# Sprint 1 Planning: Foundation & Infrastructure
+# Planejamento da Sprint 1: Fundação e Infraestrutura
 
-## Objective
-Establish the core technical foundation of the application, ensuring that the development environment is containerized and the basic architectural patterns are in place.
+## Objetivo
+Estabelecer a base técnica central da aplicação, garantindo que o ambiente de desenvolvimento seja conteinerizado e que os padrões arquiteturais básicos estejam implementados.
 
-## Scope
-- **Environment Setup**: Implementation of Docker and Docker Compose for consistent local development.
-- **Backend Initialization**: Creating the Express.js server with TypeScript.
-- **Database Layer**: Initializing the PostgreSQL database and defining the base schema.
+## Escopo
+- **Configuração do Ambiente**: Implementação de Docker e Docker Compose para um desenvolvimento local consistente.
+- **Inicialização do Backend**: Criação do servidor Express.js com TypeScript.
+- **Camada de Banco de Dados**: Inicialização do banco de dados PostgreSQL e definição do esquema base.
 
-## Planning Details
-- **Technical Stack**:
+## Detalhes do Planejamento
+- **Stack Técnica**:
   - Runtime: Node.js
-  - Language: TypeScript
+  - Linguagem: TypeScript
   - Framework: Express.js
-  - Database: PostgreSQL
-  - Orchestration: Docker Compose
-- **Critical Path**:
-  1. Docker configuration $\rightarrow$ Database availability $\rightarrow$ API Connectivity.
-- **Risks**:
-  - Compatibility issues with Docker on Windows.
-  - Schema migration overhead.
+  - Banco de Dados: PostgreSQL
+  - Orquestração: Docker Compose
+- **Caminho Crítico**:
+  1. Configuração do Docker $\rightarrow$ Disponibilidade do Banco de Dados $\rightarrow$ Conectividade da API.
+- **Riscos**:
+  - Problemas de compatibilidade com Docker no Windows.
+  - Sobrecarga de migração de esquema.
 
-## Expected Outcomes
-- [ ] A fully operational `docker-compose.yaml` file.
-- [ ] Basic API structure capable of responding to health checks.
-- [ ] Database tables created via initialization scripts.
+## Resultados Esperados
+- [ ] Um arquivo `docker-compose.yaml` totalmente operacional.
+- [ ] Estrutura básica da API capaz de responder a verificações de saúde (health checks).
+- [ ] Tabelas do banco de dados criadas via scripts de inicialização.

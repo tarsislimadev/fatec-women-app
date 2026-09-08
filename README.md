@@ -16,13 +16,13 @@ Mulheres e meninas vítimas de violência.
 
 ## Configuração local
 
-Clone o projeto com [Git](#)
+Clone o projeto com [Git](https://git-scm.com/)
 
 ```bash
 git clone https://github.com/tarsislimadev/fatec-women-app
 ```
 
-Execute o projeto com [Docker](#)
+Execute o projeto com [Docker](https://www.docker.com/)
 
 ```bash
 docker compose up -d --build

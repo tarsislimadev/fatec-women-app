@@ -6,4 +6,4 @@ COPY . .
 
 RUN flutter pub get
 
-CMD flutter run --no-sound-null-safety -d web-server --web-port=8080
+CMD flutter run -d web-server --web-port=8080

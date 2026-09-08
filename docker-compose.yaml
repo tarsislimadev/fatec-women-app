@@ -1,13 +1,4 @@
 services:
-  mobile:
-    build: './src/mobile'
-    ports:
-      - '8080:8080'
-    volumes:
-      - './src/mobile:/app'
-    depends_on:
-      - 'api'
-
   android:
     build: './src/android'
     volumes:

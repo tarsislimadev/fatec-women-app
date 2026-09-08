@@ -8,6 +8,13 @@ services:
     depends_on:
       - 'api'
 
+  android:
+    build: './src/android'
+    volumes:
+      - './src/android:/app'
+    depends_on:
+      - 'api'
+
   api:
     build: './src/api'
     environment:

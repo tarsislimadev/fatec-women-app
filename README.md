@@ -38,6 +38,11 @@ Execute o projeto com [Docker](https://www.docker.com/)
 docker compose up -d --build
 ```
 
+## Colaboradores
+
+- Tarsis Lima
+- Luiz Henrique Crepaldi da Silva
+
 ## Licença do projeto
 
 [MIT](./LICENSE)

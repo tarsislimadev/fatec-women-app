@@ -33,6 +33,7 @@ import java.util.concurrent.Executors
 
 class MainActivity : ComponentActivity() {
     private lateinit var cameraExecutor: ExecutorService
+    private var faceRecognizer: FaceRecognizer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WomenTheme {
-                WomenApp(cameraExecutor)
+                WomenApp(cameraExecutor, faceRecognizer)
             }
         }
     }
@@ -48,12 +49,13 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         cameraExecutor.shutdown()
+        faceRecognizer?.close()
     }
 }
 
 @PreviewScreenSizes
 @Composable
-fun WomenApp(cameraExecutor: ExecutorService) {
+fun WomenApp(cameraExecutor: ExecutorService, recognizer: FaceRecognizer?) {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
 
     NavigationSuiteScaffold(
@@ -78,7 +80,7 @@ fun WomenApp(cameraExecutor: ExecutorService) {
                 when (currentDestination) {
                     AppDestinations.HOME -> Greeting(name = "Android", modifier = Modifier)
                     AppDestinations.FAVORITES -> Text("Favorites Screen")
-                    AppDestinations.PROFILE -> FaceRecognitionScreen(cameraExecutor)
+                    AppDestinations.PROFILE -> FaceRecognitionScreen(cameraExecutor, recognizer)
                 }
             }
         }
@@ -86,9 +88,14 @@ fun WomenApp(cameraExecutor: ExecutorService) {
 }
 
 @Composable
-fun FaceRecognitionScreen(cameraExecutor: ExecutorService) {
+fun FaceRecognitionScreen(cameraExecutor: ExecutorService, recognizer: FaceRecognizer?) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
+    
+    // Initialize recognizer if it hasn't been created yet
+    val faceRecognizer = remember { 
+        recognizer ?: FaceRecognizer(context) 
+    }
 
     AndroidView(
         factory = { ctx ->
@@ -106,7 +113,7 @@ fun FaceRecognitionScreen(cameraExecutor: ExecutorService) {
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build()
                     .also {
-                        it.setAnalyzer(cameraExecutor, FaceAnalyzer())
+                        it.setAnalyzer(cameraExecutor, FaceAnalyzer(ctx, faceRecognizer))
                     }
 
                 try {

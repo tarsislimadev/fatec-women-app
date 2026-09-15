@@ -43,6 +43,10 @@ docker compose up -d --build
 - Tarsis Lima
 - Luiz Henrique Crepaldi da Silva
 
+## Trello
+
+https://trello.com/b/XfzfJLsb/mulher-01
+
 ## Licença do projeto
 
 [MIT](./LICENSE)

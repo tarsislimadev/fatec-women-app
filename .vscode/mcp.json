@@ -10,7 +10,15 @@
 				"TRELLO_API_KEY": "your_api_key_here",
 				"TRELLO_TOKEN": "your_token_here"
 			}
+		},
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp/",
+			"type": "http"
+		},
+		"trello": {
+			"url": "https://mcp.trello.com/v1",
+			"type": "http"
 		}
 	},
-	"inputs": [],
+	"inputs": []
 }

@@ -26,17 +26,27 @@ A Mulher Vitima:
 
 ## Configuração local
 
+### Database e API
+
 Clone o projeto com [Git](https://git-scm.com/)
 
 ```bash
 git clone https://github.com/tarsislimadev/fatec-women-app
 ```
 
-Execute o projeto com [Docker](https://www.docker.com/)
+Baixe e instale o [Docker](https://www.docker.com/)
+
+Para executar o banco de dados e o back-end digite a seguinte instrução no PowerShell:
 
 ```bash
 docker compose up -d --build
 ```
+
+### Android
+
+Baixe e instale o [Android Studio](https://developer.android.com/studio)
+
+Para executar o aplicativo, abra a pasta `./src/android` com o Android Studio.
 
 ## Colaboradores
 

@@ -11,3 +11,7 @@ https://desktop.github.com/download/
 ## DBeaver
 
 https://dbeaver.io/download/
+
+## Android Studio
+
+https://developer.android.com/studio

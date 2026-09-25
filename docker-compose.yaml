@@ -1,9 +1,4 @@
 services:
-  # android:
-  #   build: './src/android'
-  #   volumes:
-  #     - './src/android:/app'
-
   api:
     build: './src/api'
     environment:
@@ -14,7 +9,6 @@ services:
       - './src/api:/app'
     depends_on:
       - 'database'
-
   database:
     build: './src/database'
     environment:

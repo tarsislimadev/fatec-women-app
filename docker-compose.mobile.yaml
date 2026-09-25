@@ -1,0 +1,5 @@
+services:
+  android:
+    build: './src/android'
+    volumes:
+      - './src/android:/app'

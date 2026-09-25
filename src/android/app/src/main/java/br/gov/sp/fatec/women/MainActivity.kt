@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
+import br.gov.sp.fatec.women.ui.ReportScreen
 import br.gov.sp.fatec.women.ui.theme.WomenTheme
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -81,6 +82,8 @@ fun WomenApp(cameraExecutor: ExecutorService, recognizer: FaceRecognizer?) {
                     AppDestinations.HOME -> Greeting(name = "Android", modifier = Modifier)
                     AppDestinations.FAVORITES -> Text("Favorites Screen")
                     AppDestinations.PROFILE -> FaceRecognitionScreen(cameraExecutor, recognizer)
+                    AppDestinations.REPORT -> ReportScreen()
+                }
                 }
             }
         }
@@ -142,6 +145,7 @@ enum class AppDestinations(
     HOME("Home", R.drawable.ic_home),
     FAVORITES("Favorites", R.drawable.ic_favorite),
     PROFILE("Profile", R.drawable.ic_account_box),
+    REPORT("Relatar", R.drawable.ic_report),
 }
 
 @Composable

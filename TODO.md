@@ -9,3 +9,13 @@
 - [ ] https://www.gov.br/pt-br/servicos/denunciar-e-buscar-ajuda-a-vitimas-de-violencia-contra-mulheres
 
 - [ ] https://www.gov.br/mulheres/pt-br/acesso-a-informacao/participacao-social/cndm
+
+### main screen
+
+- [ ] optional name input
+
+- [ ] optional image input
+
+- [ ] optional geolocation input
+
+- [ ] required details textarea

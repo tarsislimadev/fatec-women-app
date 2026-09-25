@@ -25,8 +25,8 @@ jobs:
 
       - name: List compiled files
         run: |
-          find -name "*.apk"
-          find -name "*.aab"
+          find ./src/android -name "*.apk"
+          find ./src/android -name "*.aab"
 
       - name: Upload APK to GitHub Releases
         uses: softprops/action-gh-release@v3

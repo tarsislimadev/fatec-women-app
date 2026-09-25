@@ -11,7 +11,8 @@ jobs:
 
     steps:
       - name: Set current date and time
-        run: echo "CUR_DATE_TIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        run: |
+          echo "CUR_DATE_TIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,6 +22,9 @@ jobs:
 
       - name: Build APK
         run: docker compose -f docker-compose.mobile.yaml run --rm android sh /app/gradlew assembleDebug
+
+      - name: List APK files
+        run: find -name "*.apk"
 
       - name: Upload APK to GitHub Releases
         uses: softprops/action-gh-release@v3

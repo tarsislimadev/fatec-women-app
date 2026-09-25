@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
 @PreviewScreenSizes
 @Composable
 fun WomenApp(cameraExecutor: ExecutorService, recognizer: FaceRecognizer?) {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.REPORT) }
 
     NavigationSuiteScaffold(
         navigationSuiteItems = {
@@ -79,10 +79,8 @@ fun WomenApp(cameraExecutor: ExecutorService, recognizer: FaceRecognizer?) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Box(modifier = Modifier.padding(innerPadding)) {
                 when (currentDestination) {
-                    AppDestinations.HOME -> Greeting(name = "Android", modifier = Modifier)
-                    AppDestinations.FAVORITES -> Text("Favorites Screen")
-                    AppDestinations.PROFILE -> FaceRecognitionScreen(cameraExecutor, recognizer)
                     AppDestinations.REPORT -> ReportScreen()
+                    AppDestinations.LIST_REPORTS -> Text("Lista de Relatos (Em desenvolvimento)")
                 }
             }
         }
@@ -141,10 +139,8 @@ enum class AppDestinations(
     val label: String,
     val icon: Int,
 ) {
-    HOME("Home", R.drawable.ic_home),
-    FAVORITES("Favorites", R.drawable.ic_favorite),
-    PROFILE("Profile", R.drawable.ic_account_box),
     REPORT("Relatar", R.drawable.ic_home),
+    LIST_REPORTS("Relatos", R.drawable.ic_home),
 }
 
 @Composable

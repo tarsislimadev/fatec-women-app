@@ -7,6 +7,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
+import br.gov.sp.fatec.women.api.ReportApi
 
 @Composable
 fun ReportScreen() {
@@ -16,6 +19,7 @@ fun ReportScreen() {
     var details by remember { mutableStateOf("") }
     var isSubmitting by remember { mutableStateOf(false) }
     var message by remember { mutableStateOf("") }
+    val scope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier
@@ -58,9 +62,18 @@ fun ReportScreen() {
         Button(
             onClick = { 
                 if (details.isNotBlank()) {
-                    isSubmitting = true
-                    // API integration will happen in the next step
-                    message = "Enviando..."
+                    scope.launch {
+                        isSubmitting = true
+                        message = "Enviando..."
+                        val result = ReportApi.submitReport(name, imageUrl, location, details)
+                        if (result.isSuccess) {
+                            message = result.getOrNull() ?: "Sucesso!"
+                            name = ""; imageUrl = ""; location = ""; details = ""
+                        } else {
+                            message = "Erro: ${result.exceptionOrNull()?.message}"
+                        }
+                        isSubmitting = false
+                    }
                 } else {
                     message = "Os detalhes são obrigatórios."
                 }

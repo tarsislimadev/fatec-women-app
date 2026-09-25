@@ -23,8 +23,10 @@ jobs:
       - name: Build APK
         run: docker compose -f docker-compose.mobile.yaml run --rm android sh /app/gradlew assembleDebug
 
-      - name: List APK files
-        run: find -name "*.apk"
+      - name: List compiled files
+        run: |
+          find -name "*.apk"
+          find -name "*.aab"
 
       - name: Upload APK to GitHub Releases
         uses: softprops/action-gh-release@v3

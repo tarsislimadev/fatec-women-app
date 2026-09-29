@@ -1,4 +1,16 @@
 services:
+
+  frontend:
+    build: './src/frontend'
+    container_name: frontend
+    environment:
+      - 'PORT=8080'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './src/frontend:/app'
+    depends_on:
+      - 'api'
   api:
     build: './src/api'
     container_name: api

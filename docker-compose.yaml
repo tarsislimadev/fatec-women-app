@@ -1,6 +1,7 @@
 services:
   api:
     build: './src/api'
+    container_name: api
     environment:
       - 'PORT=3000'
     ports:
@@ -11,6 +12,7 @@ services:
       - 'database'
   database:
     build: './src/database'
+    container_name: database
     environment:
       - 'POSTGRES_USER=fatec'
       - 'POSTGRES_PASSWORD=fatec'

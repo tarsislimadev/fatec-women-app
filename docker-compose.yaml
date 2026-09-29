@@ -10,6 +10,17 @@ services:
       - './src/api:/app'
     depends_on:
       - 'database'
+  python:
+    build: './src/python'
+    container_name: python
+    environment:
+      - 'PORT=8000'
+    ports:
+      - '8000:8000'
+    volumes:
+      - './src/python:/app'
+    depends_on:
+      - 'database'
   database:
     build: './src/database'
     container_name: database
@@ -19,3 +30,8 @@ services:
       - 'POSTGRES_DB=fatec'
     ports:
       - '5432:5432'
+  psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
+    image: postgres:18-alpine
+    container_name: psql
+    depends_on:
+      - database

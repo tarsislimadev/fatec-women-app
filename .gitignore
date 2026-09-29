@@ -1,2 +1,4 @@
 src/api/node_modules/
 src/api/dist/
+src/nodejs/node_modules/
+src/python/app/__pycache__/

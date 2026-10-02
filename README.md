@@ -50,8 +50,9 @@ Para executar o aplicativo, abra a pasta `./src/android` com o Android Studio.
 
 ## Colaboradores
 
-- Tarsis Lima
-- Luiz Henrique Crepaldi da Silva
+- Tarsis Lima (DEV)
+
+- Luiz Henrique Crepaldi da Silva (PO/SM)
 
 ## Trello
 

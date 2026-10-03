@@ -1,16 +1,5 @@
 {
 	"servers": {
-		"trello-mcp-server": {
-			"type": "stdio",
-			"command": "node",
-			"args": [
-				"C:\\Users\\tarsi\\github.com\\kocakli\\trello-desktop-mcp\\dist\\index.js"
-			],
-			"env": {
-				"TRELLO_API_KEY": "your_api_key_here",
-				"TRELLO_TOKEN": "your_token_here"
-			}
-		},
 		"github": {
 			"url": "https://api.githubcopilot.com/mcp/",
 			"type": "http"

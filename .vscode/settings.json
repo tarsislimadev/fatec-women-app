@@ -1,0 +1,10 @@
+{
+  "chat.mcp.serverSampling": {
+    "fatec-women-app/.vscode/mcp.json: trello": {
+      "allowedModels": [
+        "copilotcli/auto",
+        "copilot/auto"
+      ]
+    }
+  }
+}

@@ -2,6 +2,8 @@
 
 O projeto é um aplicativo desenvolvido pela Fatec Rio Claro para ajudar a Secretaria Municipal da Mulher a registrar casos de violência contra mulheres.
 
+O modelo de domínio do projeto está descrito em [docs/modelo-dominio.md](docs/modelo-dominio.md).
+
 ## O que é?
 
 Serviço para atendimento às mulheres e meninas vítimas de violência, com organização e humanização do atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes de violência, oferecendo uma atenção integral a estas.

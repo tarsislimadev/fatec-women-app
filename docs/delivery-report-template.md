@@ -17,7 +17,7 @@ Ao final de cada aula de execução, a Squad deve preencher a tabela de contribu
 
 | Integrante | User Story (ID) | Descrição da Tarefa | Commit Hash | Evidência/Arquivo Alterado |
 | :--- | :--- | :--- | :--- | :--- |
-| Tarsis Lima | Backend Python | Tradução do Backend Node.js para Python (FastAPI) | `1992158` | `src/python/app/` |
+| Tarsis Lima | Backend Python | Tradução do Backend Node.js para Python (FastAPI) | `1992158` | `src/api/app/` |
 | Tarsis Lima | Infra Docker | Configuração de serviços Python, PSQL e Frontend | `c05c1e8` | `docker-compose.yaml` |
 | Tarsis Lima | Frontend | Inicialização da estrutura de rotas e páginas | `1b0b514` | `src/frontend/` |
 | | | | | |

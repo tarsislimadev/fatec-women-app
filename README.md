@@ -41,7 +41,7 @@ Baixe e instale o [Docker](https://www.docker.com/)
 Para executar o banco de dados e o back-end digite a seguinte instrução no PowerShell:
 
 ```bash
-docker compose up -d --build
+docker compose up -d --build --remove-orphans
 ```
 
 ### Android

@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /code
 
 RUN apt-get -y update && apt-get -y install build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
 

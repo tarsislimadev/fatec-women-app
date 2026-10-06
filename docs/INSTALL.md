@@ -4,6 +4,10 @@
 
 https://docs.docker.com/engine/install/
 
+## Node.js (for frontend development)
+
+https://nodejs.org/
+
 ## GitHub Desktop
 
 https://desktop.github.com/download/

@@ -5,6 +5,7 @@ Este repositório contém um protótipo full-stack para o app Fatec Women:
 
 - O código do admin fica em [src/admin](src/admin)
 - O código do cliente Android fica em [src/android](src/android)
+- O front-end web fica em [src/frontend](src/frontend)
 - A API Python fica em [src/api](src/api)
 - O esquema do banco de dados e migrações ficam em [src/database](src/database)
 - A orquestração de serviços locais é definida em [docker-compose.yaml](docker-compose.yaml)

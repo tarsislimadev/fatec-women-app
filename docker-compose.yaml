@@ -25,13 +25,17 @@ services:
       - 'api'
   api:
     build: './src/api'
-    container_name: python
+    container_name: api
     environment:
+      - 'DB_USER=fatec'
+      - 'DB_PASSWORD=fatec'
+      - 'DB_HOST=database'
+      - 'DB_NAME=fatec'
       - 'PORT=8000'
     ports:
       - '8000:8000'
     volumes:
-      - './src/python:/app'
+      - './src/api:/app'
     depends_on:
       - 'database'
   database:

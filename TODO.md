@@ -2,7 +2,7 @@
 
 ## P0 - Bloqueadores de segurança e integração
 
-- [ ] **Definir a API oficial**: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o admin para a implementação oficial.
+- [x] **Definir a API oficial**: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o admin para a implementação oficial.
 	- Critério de conclusão: uma única API é usada no desenvolvimento e está documentada no README.
 
 - [ ] **Implementar cadastro e login de usuário**.
@@ -64,7 +64,7 @@
 
 ## P2 - Infraestrutura e documentação
 
-- [ ] **Otimizar os Dockerfiles**.
+- [x] **Otimizar os Dockerfiles**.
 	- Critério de conclusão: dependências são instaladas de forma determinística, imagens usam estágios adequados quando necessário e o container inicia sem depender de volume de código.
 
 - [ ] **Atualizar a documentação das sprints**.

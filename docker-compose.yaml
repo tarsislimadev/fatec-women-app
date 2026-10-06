@@ -1,5 +1,16 @@
 services:
 
+  frontend:
+    build: './src/frontend'
+    container_name: frontend
+    environment:
+      - 'PORT=3000'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './src/frontend:/app'
+    depends_on:
+      - 'api'
   admin:
     build: './src/admin'
     container_name: admin

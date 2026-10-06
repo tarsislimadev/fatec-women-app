@@ -11,17 +11,6 @@ services:
       - './src/frontend:/app'
     depends_on:
       - 'api'
-  api:
-    build: './src/api'
-    container_name: api
-    environment:
-      - 'PORT=3000'
-    ports:
-      - '3000:3000'
-    volumes:
-      - './src/api:/app'
-    depends_on:
-      - 'database'
   python:
     build: './src/python'
     container_name: python

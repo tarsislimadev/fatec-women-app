@@ -5,7 +5,7 @@ Este repositório contém um protótipo full-stack para o app Fatec Women:
 
 - O código do frontend fica em [src/frontend](src/frontend)
 - O código do cliente Android fica em [src/android](src/android)
-- A API Python fica em [src/python](src/python)
+- A API Python fica em [src/api](src/api)
 - O esquema do banco de dados e migrações ficam em [src/database](src/database)
 - A orquestração de serviços locais é definida em [docker-compose.yaml](docker-compose.yaml)
 - A configuração e o uso do projeto são descritos em [README.md](README.md) e [docs/INSTALL.md](docs/INSTALL.md)
@@ -47,4 +47,4 @@ Não há testes automatizados dedicados configurados neste repositório no momen
 - [docker-compose.yaml](docker-compose.yaml)
 - [src/database/001-create-tables.sql](src/database/001-create-tables.sql)
 - [src/android/settings.gradle.kts](src/android/settings.gradle.kts)
-- [src/python/main.py](src/python/main.py)
+- [src/api/app/main.py](src/api/app/main.py)

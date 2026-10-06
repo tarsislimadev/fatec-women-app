@@ -1,2 +1,4 @@
 src/nodejs/node_modules/
-src/python/app/__pycache__/
+**/**/**/__pycache__/
+**/**/__pycache__/
+**/__pycache__/

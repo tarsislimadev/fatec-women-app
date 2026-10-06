@@ -11,8 +11,8 @@ services:
       - './src/frontend:/app'
     depends_on:
       - 'api'
-  python:
-    build: './src/python'
+  api:
+    build: './src/api'
     container_name: python
     environment:
       - 'PORT=8000'

@@ -3,7 +3,7 @@
 ## Visão Geral do Projeto
 Este repositório contém um protótipo full-stack para o app Fatec Women:
 
-- O código do frontend fica em [src/frontend](src/frontend)
+- O código do admin fica em [src/admin](src/admin)
 - O código do cliente Android fica em [src/android](src/android)
 - A API Python fica em [src/api](src/api)
 - O esquema do banco de dados e migrações ficam em [src/database](src/database)

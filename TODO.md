@@ -2,7 +2,7 @@
 
 ## P0 - Bloqueadores de segurança e integração
 
-- [ ] **Definir a API oficial**: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o frontend para a implementação oficial.
+- [ ] **Definir a API oficial**: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o admin para a implementação oficial.
 	- Critério de conclusão: uma única API é usada no desenvolvimento e está documentada no README.
 
 - [ ] **Implementar cadastro e login de usuário**.

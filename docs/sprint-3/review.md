@@ -10,10 +10,10 @@ A sprint final foi dedicada a otimizar o sistema para produção, concluir o con
 - [x] Finalização do `README.md` do projeto e da documentação interna.
 
 ## Desafios e Lições Aprendidas
-- **Desafio**: Redução do tamanho da imagem Docker do Node.js para implantações mais rápidas.
-- **Solução**: Mudança para `node:alpine` como imagem base e remoção de dependências de tempo de build no estágio final.
-- **Lição**: A otimização adequada da imagem é crítica para a eficiência do pipeline de CI/CD e gerenciamento de recursos.
+- Desafio: Redução do tamanho da imagem Docker do Node.js para implantações mais rápidas.
+- Solução: Mudança para `node:alpine` como imagem base e remoção de dependências de tempo de build no estágio final.
+- Lição: A otimização adequada da imagem é crítica para a eficiência do pipeline de CI/CD e gerenciamento de recursos.
 
 ## Status Final
-- **Status**: Concluído
-- **Aprovação**: Projeto pronto para implantação/entrega.
+- Status: Concluído
+- Aprovação: Projeto pronto para implantação/entrega.

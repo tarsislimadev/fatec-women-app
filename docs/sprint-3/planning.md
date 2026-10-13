@@ -17,6 +17,22 @@ O que foi feito o que não feito até o momento
 | ID | História | Situação | Por quê |
 |---|---|---|---|
 | US03 | Implantação do container do banco de dados PostgreSQL com um script de inicialização automatizado (001-create-tables.sql). | Não Feito | Para automatizar a inicialização do projeto em produção |
+| US08 | Implementar cadastro e login de usuário | Não Feito | Parte do backlog da Sprint 3 |
+| US09 | Implementar autenticação e autorização | Não Feito | Parte do backlog da Sprint 3 |
+| US10 | Implementar Autenticação por Reconhecimento Facial | Não Feito | Parte do backlog da Sprint 3 |
+| US11 | Definir a política de anonimato do relato | Não Feito | Parte do backlog da Sprint 3 |
+| US12 | Validar entradas da API | Não Feito | Parte do backlog da Sprint 3 |
+| US13 | Padronizar respostas e tratamento de erros | Não Feito | Parte do backlog da Sprint 3 |
+| US14 | Criar testes automatizados da API e integração com PostgreSQL | Não Feito | Parte do backlog da Sprint 3 |
+| US15 | Implementar listagem de relatos com controle de acesso | Não Feito | Parte do backlog da Sprint 3 |
+| US16 | Adicionar ciclo de acompanhamento do relato | Não Feito | Parte do backlog da Sprint 3 |
+| US17 | Avaliar vínculo entre relato e usuário | Não Feito | Parte do backlog da Sprint 3 |
+| US18 | Refinamento de UI/UX dos formulários | Não Feito | Parte do backlog da Sprint 3 |
+| US19 | Testes de Integração End-to-End | Não Feito | Parte do backlog da Sprint 3 |
+| US20 | Auditoria de Segurança de Dados | Não Feito | Parte do backlog da Sprint 3 |
+| US21 | Otimização de Dockerfiles | Não Feito | Parte do backlog da Sprint 3 |
+| US22 | Documentação de uso para o usuário final | Não Feito | Parte do backlog da Sprint 3 |
+| US23 | Atualização da documentação das sprints | Não Feito | Parte do backlog da Sprint 3 |
 
 O que mudou do Planning 2 para cá
 

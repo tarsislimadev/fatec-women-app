@@ -1,46 +1,39 @@
-**Fatec Women App**
+# Fatec Women App
 
 Entregáveis do Sprint Planning 3 (13/10)
 
-**1. Squad e papéis**
+1. Squad e papéis
 
 - Tarsis Lima (Desenvolvedor Back-End e Front-End)
 
 - Luiz Henrique Crepaldi da Silva (Product Owner, Scrum Master)
 
-**2. Onde paramos**
+2. Onde paramos
 
-No Sprint 2 o foco foi a tradução do Back-End para Python, configuração do ambiente Docker e a implementação inicial dos formulários de registro de ocorrências.
 
-**O que foi feito o que não feito até o momento**
+O que foi feito o que não feito até o momento
 
 | ID | História | Situação | Por quê |
 |---|---|---|---|
-| US01 | Material de apresentação | Feito | O PDF e uma mensagem objetiva foram usados nas abordagens. |
-| US02 | Configuração do arquivo docker-compose.yaml | Feito | Para orquestrar a API e o Banco de Dados |
 | US03 | Implantação do container do banco de dados PostgreSQL com um script de inicialização automatizado (001-create-tables.sql). | Não Feito | Para automatizar a inicialização do projeto em produção |
-| US04 | Traduzir o Back-End do projeto do node js para o Python | Feito | Para entregar o projeto com as tecnologias e habilidade adquiridas durante o curso |
-| US05 | Verificação da conectividade básica da API com um endpoint de health check. | Feito | Para garantir a funcionalidade do projeto em segundo plano |
-| US06 | Desenvolver formulário de registro de ocorrências | Feito | Para capturar os dados obrigatórios do projeto |
-| US07 | Refinar as telas de registro de ocorrências | Feito | Para entregar o projeto com o melhor design possível |
 
-**O que mudou do Planning 2 para cá**
+O que mudou do Planning 2 para cá
 
 O projeto agora entra na fase de estabilização e segurança. Após a implementação das funcionalidades básicas de registro, o foco muda para a autenticação de usuários, a proteção de dados sensíveis e a implementação de recursos avançados como o reconhecimento facial.
 
-**3. Ferramentas de acompanhamento**
+3. Ferramentas de acompanhamento
 
 Trello: https://trello.com/b/XfzfJLsb/mulher-01
 
 GitHub: https://github.com/tarsislimadev/fatec-women-app
 
-**4. Ciclo de backlogs**
+4. Ciclo de backlogs
 
-**Meta da Sprint 3**
+Meta da Sprint 3
 
-**Implementar a camada de segurança e autenticação, finalizar as funcionalidades críticas de gestão de relatos e preparar o projeto para a entrega final.**
+Implementar a camada de segurança e autenticação, finalizar as funcionalidades críticas de gestão de relatos e preparar o projeto para a entrega final.
 
-**Product Backlog**
+Product Backlog
 
 | ID | Item | Prioridade | Esforço | Sprint | Status |
 |---|---|---|---|---|---|
@@ -61,9 +54,9 @@ GitHub: https://github.com/tarsislimadev/fatec-women-app
 | US22 | Documentação de uso para o usuário final | Baixa (P2) | 6 | 3 | Pendente |
 | US23 | Atualização da documentação das sprints | Baixa (P2) | 4 | 3 | Pendente |
 
-**Sprint Backlog 3**
+Sprint Backlog 3
 
-**5. Matriz RACI**
+5. Matriz RACI
 
 Colunas: TL (Tarsis Lima); LH (Luiz Henrique); PR (Professor); STK (Stakeholder).
 
@@ -86,7 +79,7 @@ Colunas: TL (Tarsis Lima); LH (Luiz Henrique); PR (Professor); STK (Stakeholder)
 | US22 --- Documentação Usuário | R | C | I | A |
 | US23 --- Atualização Documentação | R | C | I | A |
 
-**6. Calendário e riscos**
+6. Calendário e riscos
 
 | Semana | Sprint | Atividade | Risco |
 |---|---|---|---|

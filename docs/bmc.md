@@ -1,13 +1,13 @@
-## Business Model Canvas – Projeto Fatec Rio Claro & Secretaria da Mulher
+## Business Model Canvas – Fatec Women
 
 | Bloco | Descrição |
-|-----------|---------------|
-| Proposta de Valor | Criar soluções baseadas em Inteligência Artificial para apoiar a Secretaria da Mulher na prevenção, monitoramento e combate à violência contra a mulher. Ex.: chatbot de apoio, análise de dados de ocorrências, campanhas educativas digitais. |
-| Segmentos de Clientes | - Secretaria da Mulher de Rio Claro<br>- Mulheres em situação de vulnerabilidade<br>- Comunidade local<br>- Organizações parceiras (ONGs, escolas, hospitais, delegacias) |
-| Canais | - Aplicativo ou plataforma digital<br>- Redes sociais<br>- Eventos comunitários<br>- Parcerias com escolas e universidades |
-| Relacionamento com Clientes | - Atendimento humanizado via chatbot<br>- Oficinas e palestras educativas<br>- Suporte contínuo à Secretaria<br>- Comunicação transparente e acessível |
-| Atividades-Chave | - Desenvolvimento de soluções de IA<br>- Coleta e análise de dados<br>- Criação de campanhas de conscientização<br>- Treinamento de equipe da Secretaria |
-| Recursos-Chave | - Equipe de alunos e professores da Fatec<br>- Conhecimento em IA e ciência de dados<br>- Infraestrutura tecnológica (computadores, servidores)<br>- Apoio institucional da Secretaria |
-| Parcerias-Chave | - Secretaria da Mulher<br>- Fatec Rio Claro<br>- ONGs de apoio às mulheres<br>- Delegacia da Mulher<br>- Hospitais e centros de saúde |
-| Estrutura de Custos | - Desenvolvimento tecnológico<br>- Treinamentos e capacitações<br>- Campanhas de divulgação<br>- Manutenção da plataforma |
-| Fontes de Receita/Benefícios | - Apoio institucional e financiamento público<br>- Parcerias com ONGs e empresas<br>- Benefício social: redução da violência e maior proteção às mulheres |
+|---|---|
+| Proposta de Valor | Oferecer um canal digital acessível e humanizado para que mulheres e meninas registrem situações de violência. Organizar os relatos e facilitar o acompanhamento e o encaminhamento pela Secretaria Municipal da Mulher, com proteção dos dados pessoais e atenção à segurança da vítima. |
+| Segmentos de Clientes | - Mulheres e meninas vítimas de violência<br>- Secretaria Municipal da Mulher de Rio Claro e sua equipe de atendimento<br>- Rede local de proteção, quando acionada (Delegacia da Mulher, saúde, assistência social e organizações parceiras) |
+| Canais | - Aplicativo Android<br>- Plataforma web de apoio e acompanhamento<br>- Divulgação por meio da Secretaria, serviços públicos, escolas, unidades de saúde e organizações parceiras |
+| Relacionamento com Clientes | - Atendimento acolhedor, respeitoso e sem julgamentos<br>- Orientação clara sobre o registro e o encaminhamento do caso<br>- Acompanhamento do relato pela equipe autorizada<br>- Comunicação acessível, com preservação do sigilo e consentimento da vítima |
+| Atividades-Chave | - Evolução e manutenção do aplicativo, da API e do painel de acompanhamento<br>- Registro, organização e consulta dos relatos<br>- Encaminhamento dos casos à rede de proteção responsável<br>- Treinamento das equipes e revisão dos procedimentos de segurança e privacidade |
+| Recursos-Chave | - Equipe de alunos e professores da Fatec Rio Claro<br>- Aplicativo, plataforma web, API e banco de dados<br>- Infraestrutura de hospedagem e controle de acesso<br>- Conhecimento da rede municipal de atendimento e apoio institucional da Secretaria |
+| Parcerias-Chave | - Secretaria Municipal da Mulher de Rio Claro<br>- Fatec Rio Claro<br>- Delegacia da Mulher e demais órgãos públicos da rede de proteção<br>- Unidades de saúde, assistência social, escolas e organizações da sociedade civil |
+| Estrutura de Custos | - Desenvolvimento, testes e manutenção do software<br>- Hospedagem, banco de dados, backups e segurança<br>- Capacitação das equipes e suporte operacional<br>- Comunicação, acessibilidade e atualização dos materiais de orientação |
+| Fontes de Receita/Benefícios | - Financiamento público e apoio institucional<br>- Editais, convênios e parcerias com organizações comprometidas com a proteção das mulheres<br>- Benefícios sociais: acesso facilitado à rede de proteção, melhor organização do atendimento e produção de informações para orientar políticas públicas, respeitando a privacidade |

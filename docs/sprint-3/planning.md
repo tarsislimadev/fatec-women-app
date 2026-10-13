@@ -4,9 +4,10 @@ Entregáveis do Sprint Planning 3 (13/10)
 
 1. Squad e papéis
 
-- Tarsis Lima (Desenvolvedor Back-End e Front-End)
-
-- Luiz Henrique Crepaldi da Silva (Product Owner, Scrum Master)
+| Nome | Papel |
+|---|---|
+| Tarsis Lima | Desenvolvedor Back-End e Front-End |
+| Luiz Henrique Crepaldi da Silva | Product Owner, Scrum Master |
 
 2. Onde paramos
 

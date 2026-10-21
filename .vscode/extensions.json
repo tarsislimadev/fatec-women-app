@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "dart-code.flutter"
+    "dart-code.flutter",
+    "ms-python.python",
+    "ms-python.vscode-python-envs"
   ]
 }

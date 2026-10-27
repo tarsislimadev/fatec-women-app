@@ -48,8 +48,8 @@ services:
       - 'POSTGRES_DB=fatec'
     ports:
       - '5432:5432'
-  psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
-    image: postgres:18-alpine
-    container_name: psql
-    depends_on:
-      - database
+  # psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
+  #   image: postgres:18-alpine
+  #   container_name: psql
+  #   depends_on:
+  #     - database

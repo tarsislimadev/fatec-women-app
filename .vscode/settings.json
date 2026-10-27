@@ -6,5 +6,6 @@
         "copilot/auto"
       ]
     }
-  }
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:system"
 }

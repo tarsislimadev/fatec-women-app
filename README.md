@@ -27,23 +27,48 @@ O projeto adota uma abordagem modular para facilitar a manutenção e a escalabi
 ### Pré-requisitos
 Para configurar o ambiente de desenvolvimento, certifique-se de ter instalado:
 - Git: Para controle de versão e clonagem do código.
-- Docker & Docker Compose: Para a orquestração dos serviços de backend e banco de dados.
+- Docker & Docker Compose: Para executar a API localmente.
 - Android Studio: Para compilação e execução do aplicativo mobile.
 
-### 1. Backend e Banco de Dados
-O backend é distribuído via containers para garantir a paridade entre os ambientes de desenvolvimento e produção. Para iniciar:
+### 1. Backend local
+O Docker Compose executa a API Python para desenvolvimento local. A implantação de produção não usa o banco de dados local: a API publicada na Vercel se conecta ao PostgreSQL hospedado no Supabase.
 
 ```bash
 # Clone o repositório
 git clone https://github.com/tarsislimadev/fatec-women-app
 cd fatec-women-app
 
-# Inicie os serviços (API Python e Postgres)
+# Inicie os serviços locais
 docker compose up -d --build
 ```
-Após a inicialização, você pode validar a disponibilidade da API acessando o endpoint de saúde: `http://localhost:8000/health`.
+Após a inicialização, valide a API acessando `http://localhost:8000/health`. Para desenvolvimento local, configure as variáveis de banco em `src/api/.env` conforme o ambiente PostgreSQL que será utilizado. Não versionar esse arquivo nem credenciais reais.
 
-### 2. Aplicativo Android
+### 2. Implantação
+
+O ambiente publicado é composto por:
+
+- **API:** deploy da aplicação Python em um projeto da [Vercel](https://vercel.com/).
+- **Banco de dados:** PostgreSQL gerenciado pelo [Supabase](https://supabase.com/).
+
+No projeto da Vercel, defina o diretório `src/api` como raiz da API e cadastre as variáveis de ambiente do banco:
+
+| Variável | Descrição |
+| --- | --- |
+| `DB_HOST` | Host do banco PostgreSQL no Supabase |
+| `DB_PORT` | Porta do PostgreSQL, normalmente `5432` |
+| `DB_NAME` | Nome do banco, normalmente `postgres` |
+| `DB_USER` | Usuário do banco |
+| `DB_PASSWORD` | Senha do banco |
+
+Use os valores da conexão disponibilizados no painel do Supabase. As variáveis devem ser configuradas nos ambientes necessários da Vercel (Production, Preview e/ou Development), sem colocar senhas no repositório. Após o deploy, valide a integração acessando:
+
+```text
+https://<dominio-da-api-na-vercel>/health
+```
+
+O endpoint `/health` verifica a conectividade da API com o banco. Para criar ou atualizar as tabelas, execute o script SQL versionado em [`src/database/001-create-tables.sql`](src/database/001-create-tables.sql) no SQL Editor do Supabase.
+
+### 3. Aplicativo Android
 O aplicativo é desenvolvido em Kotlin/Java. Para executá-lo:
 1. Abra o Android Studio.
 2. Selecione "Open" e aponte para a pasta [`src/android`](src/android).

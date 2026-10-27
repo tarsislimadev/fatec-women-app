@@ -19,7 +19,7 @@ Use a raiz do repositório para iniciar os serviços:
 docker compose up -d --build
 ```
 
-Isso inicia os serviços de API e Postgres. A API expõe verificações de integridade (health checks) em `http://localhost:8000/health` e o banco de dados está disponível na porta `5432`.
+Isso inicia o serviço local da API. Em produção, a API é executada na Vercel e se conecta ao PostgreSQL hospedado no Supabase; o banco de produção não é iniciado pelo Docker Compose. A API local expõe verificações de integridade em `http://localhost:8000/health`.
 
 Para o desenvolvimento Android, abra a pasta do projeto [src/android](src/android) no Android Studio. No Windows, o repositório inclui um script Gradle wrapper em [src/android/gradlew.bat](src/android/gradlew.bat); para builds via linha de comando, use:
 
@@ -37,7 +37,7 @@ cd src/android
 ## Validação
 Não há testes automatizados dedicados configurados neste repositório no momento, portanto a validação deve ser leve e prática:
 
-- Para alterações na API ou banco de dados: inicie os serviços Docker e verifique se o endpoint de health responde.
+- Para alterações na API ou banco de dados: inicie a API local com Docker e verifique se o endpoint de health responde. Para validar produção, use o endpoint `/health` da Vercel e as credenciais configuradas no ambiente do Supabase.
 - Para alterações no Android: execute o build Gradle relevante ou verifique se o projeto ainda carrega corretamente no Android Studio.
 - Prefira verificações rápidas (smoke checks) a reescritas dispendiosas.
 

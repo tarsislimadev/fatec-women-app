@@ -29,7 +29,7 @@ services:
     container_name: api
     environment:
       - 'DB_USER=fatec'
-      - 'DB_PASSWORD=fatec'
+      - 'DB_PASSWORD=kmtejQjrpMh2s8Tw'
       - 'DB_HOST=database'
       - 'DB_NAME=fatec'
       - 'PORT=8000'
@@ -44,7 +44,7 @@ services:
     container_name: database
     environment:
       - 'POSTGRES_USER=fatec'
-      - 'POSTGRES_PASSWORD=fatec'
+      - 'POSTGRES_PASSWORD=kmtejQjrpMh2s8Tw'
       - 'POSTGRES_DB=fatec'
     ports:
       - '5432:5432'

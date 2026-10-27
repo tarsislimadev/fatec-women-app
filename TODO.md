@@ -1,5 +1,11 @@
 # Backlog do Projeto
 
+## PP - 
+
+- [ ] Revisar banco de dados no Supabase
+- [ ] Testar integração API (na Vercel) com banco de dados (no Supabase)
+- [ ] Corrigir endpoints da API
+
 ## P0 - Bloqueadores de segurança e integração
 
 - [x] Definir a API oficial: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o admin para a implementação oficial.

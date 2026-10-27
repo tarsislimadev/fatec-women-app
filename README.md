@@ -1,57 +1,68 @@
 # Fatec Women App
 
-O Fatec Women é um protótipo full-stack desenvolvido pela Fatec Rio Claro para auxiliar a Secretaria Municipal da Mulher no registro e acompanhamento de casos de violência contra mulheres e meninas. O objetivo é organizar e humanizar o atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes da violência, oferecendo atenção integral às vítimas.
+O Fatec Women é um protótipo full-stack desenvolvido por estudantes da Fatec Rio Claro com o propósito de apoiar a Secretaria Municipal da Mulher na gestão, registro e acompanhamento de casos de violência contra mulheres e meninas. O sistema visa transformar a experiência de atendimento, auxiliando processos manuais por um fluxo digital organizado e humanizado, facilitando o controle de agravos físicos e psíquicos e garantindo que a vítima receba uma atenção integral e multidisciplinar.
 
-O modelo de domínio do projeto está descrito em [docs/modelo-dominio.md](docs/modelo-dominio.md).
+O modelo de domínio detalhado, incluindo as regras de negócio e fluxos de dados, está descrito em [docs/modelo-dominio.md](docs/modelo-dominio.md).
 
 ## 📱 Funcionalidades Principais
 
-Para a mulher vítima de violência, o aplicativo oferece:
-1. **Autenticação Segura**: Acesso via reconhecimento facial.
-2. **Registro de Ocorrências**: Detalhamento do caso de violência.
-3. **Denúncia**: Envio de dados do agressor para as autoridades locais.
+O ecossistema do aplicativo foi projetado para oferecer segurança e agilidade no momento crítico da denúncia:
+
+- Autenticação Biométrica Segura: Para garantir a privacidade e a identidade da usuária, o sistema implementa a autenticação via reconhecimento facial, reduzindo a dependência de senhas que podem ser comprometidas.
+- Registro Detalhado de Ocorrências: Interface intuitiva que permite à vítima descrever a natureza da violência, o histórico de incidentes e o estado atual de sua saúde e segurança.
+- Canal Direto de Denúncia: Módulo de envio automatizado de dados do agressor e evidências para as autoridades locais competentes, agilizando o tempo de resposta e a proteção da vítima.
+- Gestão Administrativa: Painel para a Secretaria Municipal da Mulher gerenciar os casos recebidos, priorizar atendimentos e monitorar a evolução do suporte oferecido.
 
 ## 🛠️ Arquitetura do Projeto
 
-O projeto é composto por múltiplas camadas:
-- **Cliente Android**: Localizado em [`src/android`](src/android).
-- **API Python**: Backend localizado em [`src/api`](src/api).
-- **Frontend Web**: Interface administrativa em [`src/frontend`](src/frontend).
-- **Painel Admin**: Código de administração em [`src/admin`](src/admin).
-- **Banco de Dados**: Esquemas e migrações em [`src/database`](src/database).
+O projeto adota uma abordagem modular para facilitar a manutenção e a escalabilidade de cada componente:
+
+- Cliente Android ([`src/android`](src/android)): Aplicativo nativo desenvolvido para as vítimas, focado em usabilidade, acessibilidade e segurança.
+- API Python ([`src/api`](src/api)): Backend robusto que centraliza a lógica de negócio, a validação de dados e a comunicação com o banco de dados.
+- Frontend Web ([`src/frontend`](src/frontend)): Interface moderna para visualização de dados e relatórios.
+- Painel Admin ([`src/admin`](src/admin)): Módulo especializado para a gestão administrativa dos casos e usuários.
+- Banco de Dados ([`src/database`](src/database)): Camada de persistência utilizando PostgreSQL, com scripts de migração e definições de esquema explícitas.
 
 ## 🚀 Configuração Local
 
 ### Pré-requisitos
-- [Git](https://git-scm.com/)
-- [Docker](https://www.docker.com/)
-- [Android Studio](https://developer.android.com/studio)
+Para configurar o ambiente de desenvolvimento, certifique-se de ter instalado:
+- Git: Para controle de versão e clonagem do código.
+- Docker & Docker Compose: Para a orquestração dos serviços de backend e banco de dados.
+- Android Studio: Para compilação e execução do aplicativo mobile.
 
 ### 1. Backend e Banco de Dados
-Clone o repositório e utilize o Docker Compose para subir a API e o banco de dados Postgres:
+O backend é distribuído via containers para garantir a paridade entre os ambientes de desenvolvimento e produção. Para iniciar:
 
 ```bash
+# Clone o repositório
 git clone https://github.com/tarsislimadev/fatec-women-app
 cd fatec-women-app
+
+# Inicie os serviços (API Python e Postgres)
 docker compose up -d --build
 ```
-A API estará disponível com health checks em `http://localhost:8000/health`.
+Após a inicialização, você pode validar a disponibilidade da API acessando o endpoint de saúde: `http://localhost:8000/health`.
 
 ### 2. Aplicativo Android
-Abra a pasta [`src/android`](src/android) no Android Studio. Para builds via linha de comando (Windows):
+O aplicativo é desenvolvido em Kotlin/Java. Para executá-lo:
+1. Abra o Android Studio.
+2. Selecione "Open" e aponte para a pasta [`src/android`](src/android).
+3. Sincronize o Gradle e execute em um emulador ou dispositivo físico.
 
+Para builds via linha de comando (Windows):
 ```powershell
 cd src/android
 ./gradlew.bat assembleDebug
 ```
 
 ## 📦 Downloads e Links
-- **Releases**: [Acessar Releases](https://github.com/tarsislimadev/fatec-women-app/releases)
-- **Gestão do Projeto**: [Trello Board](https://trello.com/b/XfzfJLsb/mulher-01)
+- Releases: Versões compiladas e notas de atualização disponíveis em [GitHub Releases](https://github.com/tarsislimadev/fatec-women-app/releases).
+- Gestão do Projeto: Acompanhe o roadmap e as tarefas pendentes no [Trello Board](https://trello.com/b/XfzfJLsb/mulher-01).
 
 ## 👥 Colaboradores
-- **Tarsis Lima** (Desenvolvedor)
-- **Luiz Henrique Crepaldi da Silva** (PO/SM)
+- Tarsis Lima: Desenvolvimento Full-stack e Arquitetura de Software.
+- Luiz Henrique Crepaldi da Silva: Product Owner (PO) e Scrum Master (SM), responsável pela gestão de requisitos e agilidade.
 
 ## 📜 Licença
-Este projeto está sob a licença [MIT](./LICENSE).
+Este projeto é distribuído sob a licença [MIT](./LICENSE), permitindo o uso, modificação e distribuição livre do software.

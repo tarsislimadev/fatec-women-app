@@ -21,7 +21,6 @@ O projeto adota uma abordagem modular para facilitar a manutenção e a escalabi
 - API Python ([`src/api`](src/api)): Backend robusto que centraliza a lógica de negócio, a validação de dados e a comunicação com o banco de dados.
 - Frontend Web ([`src/frontend`](src/frontend)): Interface moderna para visualização de dados e relatórios.
 - Painel Admin ([`src/admin`](src/admin)): Módulo especializado para a gestão administrativa dos casos e usuários.
-- Banco de Dados ([`src/database`](src/database)): Camada de persistência utilizando PostgreSQL, com scripts de migração e definições de esquema explícitas.
 
 ## 🚀 Configuração Local
 

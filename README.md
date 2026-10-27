@@ -1,65 +1,57 @@
-# Fatec Women app
+# Fatec Women App
 
-O projeto é um aplicativo desenvolvido pela Fatec Rio Claro para ajudar a Secretaria Municipal da Mulher a registrar casos de violência contra mulheres.
+O Fatec Women é um protótipo full-stack desenvolvido pela Fatec Rio Claro para auxiliar a Secretaria Municipal da Mulher no registro e acompanhamento de casos de violência contra mulheres e meninas. O objetivo é organizar e humanizar o atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes da violência, oferecendo atenção integral às vítimas.
 
 O modelo de domínio do projeto está descrito em [docs/modelo-dominio.md](docs/modelo-dominio.md).
 
-## O que é?
+## 📱 Funcionalidades Principais
 
-Serviço para atendimento às mulheres e meninas vítimas de violência, com organização e humanização do atendimento, visando o controle e o tratamento dos agravos físicos e psíquicos decorrentes de violência, oferecendo uma atenção integral a estas.
+Para a mulher vítima de violência, o aplicativo oferece:
+1. **Autenticação Segura**: Acesso via reconhecimento facial.
+2. **Registro de Ocorrências**: Detalhamento do caso de violência.
+3. **Denúncia**: Envio de dados do agressor para as autoridades locais.
 
-## Quem pode utilizar este serviço
+## 🛠️ Arquitetura do Projeto
 
-Mulheres e meninas vítimas de violência.
+O projeto é composto por múltiplas camadas:
+- **Cliente Android**: Localizado em [`src/android`](src/android).
+- **API Python**: Backend localizado em [`src/api`](src/api).
+- **Frontend Web**: Interface administrativa em [`src/frontend`](src/frontend).
+- **Painel Admin**: Código de administração em [`src/admin`](src/admin).
+- **Banco de Dados**: Esquemas e migrações em [`src/database`](src/database).
 
-## Como utilizar o serviço
+## 🚀 Configuração Local
 
-A Mulher Vitima:
+### Pré-requisitos
+- [Git](https://git-scm.com/)
+- [Docker](https://www.docker.com/)
+- [Android Studio](https://developer.android.com/studio)
 
-1. Autentica com Reconhecimento Facial
-
-2. Detalha o Caso de Violencia
-
-3. Envia dados do agressor para as autoridades locais
-
-## Faça download do aplicativo
-
-[Releases](https://github.com/tarsislimadev/fatec-women-app/releases)
-
-## Configuração local
-
-### Database e API
-
-Clone o projeto com [Git](https://git-scm.com/)
+### 1. Backend e Banco de Dados
+Clone o repositório e utilize o Docker Compose para subir a API e o banco de dados Postgres:
 
 ```bash
 git clone https://github.com/tarsislimadev/fatec-women-app
+cd fatec-women-app
+docker compose up -d --build
+```
+A API estará disponível com health checks em `http://localhost:8000/health`.
+
+### 2. Aplicativo Android
+Abra a pasta [`src/android`](src/android) no Android Studio. Para builds via linha de comando (Windows):
+
+```powershell
+cd src/android
+./gradlew.bat assembleDebug
 ```
 
-Baixe e instale o [Docker](https://www.docker.com/)
+## 📦 Downloads e Links
+- **Releases**: [Acessar Releases](https://github.com/tarsislimadev/fatec-women-app/releases)
+- **Gestão do Projeto**: [Trello Board](https://trello.com/b/XfzfJLsb/mulher-01)
 
-Para executar o banco de dados e o back-end digite a seguinte instrução no PowerShell:
+## 👥 Colaboradores
+- **Tarsis Lima** (Desenvolvedor)
+- **Luiz Henrique Crepaldi da Silva** (PO/SM)
 
-```bash
-docker compose up -d --build --remove-orphans
-```
-
-### Android
-
-Baixe e instale o [Android Studio](https://developer.android.com/studio)
-
-Para executar o aplicativo, abra a pasta `./src/android` com o Android Studio.
-
-## Colaboradores
-
-- Tarsis Lima (DEV)
-
-- Luiz Henrique Crepaldi da Silva (PO/SM)
-
-## Trello
-
-https://trello.com/b/XfzfJLsb/mulher-01
-
-## Licença do projeto
-
-[MIT](./LICENSE)
+## 📜 Licença
+Este projeto está sob a licença [MIT](./LICENSE).

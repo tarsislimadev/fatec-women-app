@@ -1,0 +1,118 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2410 >>
+stream
+BT
+/F1 16 Tf
+50 760 Td
+(Daily Board - 27-10-2026) Tj
+/F1 10 Tf
+0 -15 Td
+() Tj
+0 -15 Td
+(ALTERACOES RECENTES) Tj
+0 -15 Td
+(- Documentacao e instalacao: README.md revisado com a descricao do projeto,) Tj
+0 -15 Td
+(  arquitetura e instrucoes de execucao local.) Tj
+0 -15 Td
+(- Criado o guia docs/INSTALL.md com os passos de instalacao e configuracao.) Tj
+0 -15 Td
+(- Atualizado o AGENTS.md para refletir a organizacao atual do projeto.) Tj
+0 -15 Td
+(- API e banco de dados: conexao ajustada para usar variaveis de ambiente sem) Tj
+0 -15 Td
+(  valores padrao implicitos.) Tj
+0 -15 Td
+(- Criado src/api/.env.example e configurada sua copia no Dockerfile da API.) Tj
+0 -15 Td
+(- Adicionado o schema SQL inicial para usuarios, mensagens e relatos em) Tj
+0 -15 Td
+(  src/database/001-create-tables.sql.) Tj
+0 -15 Td
+(- Removido o servico de banco de dados e as variaveis relacionadas do) Tj
+0 -15 Td
+(  docker-compose.yaml.) Tj
+0 -15 Td
+(- Admin: ambiente de desenvolvimento atualizado para usar o servidor Vite.) Tj
+0 -15 Td
+(- Adicionados react-router-dom e lucide-react ao projeto administrativo.) Tj
+0 -15 Td
+(- Configurado o volume de node_modules no servico do admin.) Tj
+0 -15 Td
+(- Configuracao: adicionadas extensoes Python as recomendacoes do VS Code e) Tj
+0 -15 Td
+(  atualizado o script de inicializacao dos containers.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(TAREFAS DO TRELLO) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Em andamento) Tj
+0 -15 Td
+([ ] Revisar o banco de dados no Supabase.) Tj
+0 -15 Td
+([ ] Testar a integracao da API na Vercel com o banco de dados no Supabase.) Tj
+0 -15 Td
+([ ] Corrigir os endpoints da API.) Tj
+0 -15 Td
+([ ] Implementar cadastro, login, autenticacao e autorizacao de usuarios.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Concluido) Tj
+0 -15 Td
+([x] Definir a API oficial em Python/FastAPI.) Tj
+0 -15 Td
+([x] Documentar a arquitetura e o processo de instalacao local.) Tj
+0 -15 Td
+([x] Criar o schema inicial do banco de dados.) Tj
+0 -15 Td
+([x] Configurar as variaveis de ambiente da API.) Tj
+0 -15 Td
+([x] Ajustar a infraestrutura Docker do admin e da API.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A fazer) Tj
+0 -15 Td
+([ ] Validar os endpoints de health check e de registro de casos.) Tj
+0 -15 Td
+([ ] Implementar validacao de entradas da API.) Tj
+0 -15 Td
+([ ] Criar testes automatizados da API.) Tj
+0 -15 Td
+([ ] Atualizar a documentacao das sprints conforme as funcionalidades) Tj
+0 -15 Td
+(    implementadas.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000317 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2779
+%%EOF

@@ -10,7 +10,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 object ReportApi {
-    private const val BASE_URL = "http://10.0.2.2:3000" // Android Emulator loopback to host
+    private const val BASE_URL = "https://fatec-women-api.vercel.app"
 
     suspend fun submitReport(name: String?, imageUrl: String?, location: String?, details: String): Result<String> {
         return withContext(Dispatchers.IO) {

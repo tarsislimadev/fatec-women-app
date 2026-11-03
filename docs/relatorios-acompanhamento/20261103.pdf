@@ -1,0 +1,309 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Length 3347 >>
+stream
+BT
+/F1 10.5 Tf
+48 790 Td
+13 TL
+( Relatório de Acompanhamento) Tj
+T*
+() Tj
+T*
+( 1. Identificação) Tj
+T*
+() Tj
+T*
+(- **Projeto ou processo:** Fatec Women) Tj
+T*
+(- **Período:** 03/11/2026) Tj
+T*
+(- **Data de emissão:** 03/11/2026) Tj
+T*
+(- **Tipo e periodicidade:** Relatório de atividades, acompanhamento diário) Tj
+T*
+(- **Fonte principal:** estado do repositório, histórico Git, documentação, backlog e) Tj
+T*
+(validações executadas localmente) Tj
+T*
+() Tj
+T*
+( 2. Objetivo) Tj
+T*
+() Tj
+T*
+(Registrar o estado atual do desenvolvimento, comparar as entregas planejadas com o que possui) Tj
+T*
+(evidência no repositório e apoiar a priorização das próximas atividades técnicas.) Tj
+T*
+() Tj
+T*
+( 3. Planejamento) Tj
+T*
+() Tj
+T*
+(Meta ou entrega | Prazo ou referência | Indicador ou evidência esperada) Tj
+T*
+(Disponibilizar API para relatos e health check | Concluída | Endpoints, integração PostgreSQL) Tj
+T*
+(e compilação) Tj
+T*
+(Configurar deploy da API | Concluída | Configuração Vercel/Supabase e validação registrada) Tj
+T*
+(Manter documentação de instalação e domínio | Concluída | `README.md`, `docs/INSTALL.md` e) Tj
+T*
+(`docs/modelo-dominio.md`) Tj
+T*
+(Criar testes automatizados da API | Próxima atividade | Testes para health check,) Tj
+T*
+(autenticação, relatos e validações) Tj
+T*
+(Implementar autenticação e autorização | Pendente no backlog | Cadastro, login e proteção de) Tj
+T*
+(endpoints) Tj
+T*
+(Executar integração ponta a ponta | Pendente no backlog | Fluxo Android -> API -> PostgreSQL) Tj
+T*
+(validado) Tj
+T*
+() Tj
+T*
+( 4. Acompanhamento) Tj
+T*
+() Tj
+T*
+(Atividade | Responsável | Status | Evidência | Observações) Tj
+T*
+(API TypeScript/Express com `/`, `/health`, `GET /reports` e `POST /reports` | Equipe do) Tj
+T*
+(projeto | Concluído | `src/api/src/index.ts` | A API compilou com `npm run build`.) Tj
+T*
+(Persistência inicial de relatos em PostgreSQL | Equipe do projeto | Concluído |) Tj
+T*
+(`src/database/001-create-tables.sql` e `src/api/src/index.ts` | O esquema também contém) Tj
+T*
+(usuários e mensagens, ainda sem endpoints correspondentes.) Tj
+T*
+(Contrato OpenAPI | Equipe do projeto | Concluído | `src/api/swagger.yaml` | Deve ser mantido) Tj
+T*
+(sincronizado com a implementação.) Tj
+T*
+(Interfaces web e painel administrativo | Equipe do projeto | Em andamento | `src/frontend/` e) Tj
+T*
+(`src/admin/` | Os projetos estão estruturados, mas os builds não foram executados por) Tj
+T*
+(dependências locais ausentes e diretórios sem permissão de escrita.) Tj
+T*
+(Aplicativo Android | Equipe do projeto | Em andamento | `src/android/` | O wrapper Gradle) Tj
+T*
+(iniciou, mas o build foi bloqueado pela ausência de Android SDK configurado.) Tj
+T*
+(Autenticação e autorização | Equipe do projeto | Pendente | `TODO.md` e) Tj
+T*
+(`docs/modelo-dominio.md` | `GET /reports` ainda está público segundo o código e a) Tj
+T*
+(documentação.) Tj
+T*
+(Testes automatizados e integração PostgreSQL | Equipe do projeto | Pendente | `TODO.md` e) Tj
+T*
+(`docs/daily-board/20261103.md` | Não há suíte automatizada dedicada configurada no) Tj
+T*
+(repositório.) Tj
+T*
+() Tj
+T*
+( 5. Comparação entre planejado e realizado) Tj
+T*
+() Tj
+T*
+(As entregas de infraestrutura e do fluxo mínimo de relatos avançaram: a API está documentada,) Tj
+T*
+(possui conexão PostgreSQL, validação básica do payload e foi compilada com sucesso. O) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 3441 >>
+stream
+BT
+/F1 10.5 Tf
+48 790 Td
+13 TL
+(histórico recente também registra a configuração do deploy e das variáveis de ambiente na) Tj
+T*
+(Vercel/Supabase; essa informação é documental e não foi revalidada externamente neste) Tj
+T*
+(acompanhamento.) Tj
+T*
+() Tj
+T*
+(Permanecem desvios relevantes em relação ao produto descrito no README e ao backlog:) Tj
+T*
+() Tj
+T*
+(- não há cadastro, login, autenticação ou autorização implementados;) Tj
+T*
+(- a consulta de relatos não possui controle de acesso;) Tj
+T*
+(- a validação atual não comprova limites de texto, URLs ou intervalo de coordenadas;) Tj
+T*
+(- não há testes automatizados nem teste de integração ponta a ponta;) Tj
+T*
+(- status, histórico de encaminhamento e responsável pelo acompanhamento do relato ainda não) Tj
+T*
+(existem no modelo implementado.) Tj
+T*
+() Tj
+T*
+( 6. Resultados e mudanças percebidas) Tj
+T*
+() Tj
+T*
+(- A implementação oficial do backend está documentada como Node.js/Express, reduzindo a) Tj
+T*
+(ambiguidade anterior registrada no backlog.) Tj
+T*
+(- O fluxo mínimo de criação e consulta de relatos está representado na API e no modelo de) Tj
+T*
+(domínio.) Tj
+T*
+(- A documentação de instalação descreve desenvolvimento local, deploy na Vercel, banco) Tj
+T*
+(Supabase e variáveis de ambiente.) Tj
+T*
+(- A separação entre Android, frontend, admin, API e banco permanece visível na estrutura do) Tj
+T*
+(repositório.) Tj
+T*
+(- Não foi possível confirmar neste ambiente a compilação do frontend, do admin ou do Android.) Tj
+T*
+() Tj
+T*
+( 7. Riscos, desvios e impedimentos) Tj
+T*
+() Tj
+T*
+(Risco ou impedimento | Impacto | Situação) Tj
+T*
+(Relatos consultáveis sem autenticação/autorização | Exposição potencial de dados sensíveis |) Tj
+T*
+(Requer priorização P0) Tj
+T*
+(Ausência de testes automatizados | Regressões podem não ser detectadas | Pendente) Tj
+T*
+(Regras de validação incompletas | Dados inválidos ou excessivos podem ser aceitos | Pendente) Tj
+T*
+(Frontend/admin sem dependências instaláveis neste ambiente | Build não verificado; `npm ci`) Tj
+T*
+(encontrou `EACCES` em `node_modules` | Requer ajuste de permissões ou ambiente limpo) Tj
+T*
+(Android sem Android SDK configurado | `assembleDebug` não pôde concluir | Requer configurar) Tj
+T*
+(`ANDROID_HOME` ou `local.properties`) Tj
+T*
+() Tj
+T*
+( 8. Recomendações e próximos passos) Tj
+T*
+() Tj
+T*
+(Ação | Responsável | Prazo recomendado) Tj
+T*
+(Implementar autenticação, autorização e política de anonimato | Equipe da API e produto |) Tj
+T*
+(Antes de expor relatos em produção) Tj
+T*
+(Completar validação de payload e padronizar respostas de erro | Equipe da API | Próximo ciclo) Tj
+T*
+(Criar testes automatizados unitários e de integração com PostgreSQL | Equipe da API | Próximo) Tj
+T*
+(ciclo) Tj
+T*
+(Configurar ambiente reproduzível para builds do frontend, admin e Android | Equipe de) Tj
+T*
+(desenvolvimento | Antes da próxima revisão) Tj
+T*
+(Executar fluxo ponta a ponta e registrar evidências | Equipe full-stack | Após autenticação e) Tj
+T*
+(testes básicos) Tj
+T*
+(Revisar o esquema para status, histórico e responsável pelo atendimento | Produto e banco de) Tj
+T*
+(dados | Antes da implementação do acompanhamento de casos) Tj
+T*
+(Atualizar este relatório com as evidências do próximo dia | Responsável pelo acompanhamento |) Tj
+T*
+(04/11/2026) Tj
+T*
+() Tj
+T*
+( 9. Anexos e evidências) Tj
+T*
+() Tj
+T*
+(- Histórico recente: commits de 03/11/2026, incluindo API, documentação e configuração de) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 435 >>
+stream
+BT
+/F1 10.5 Tf
+48 790 Td
+13 TL
+(ambiente.) Tj
+T*
+(- Registro diário: `docs/daily-board/20261103.md`.) Tj
+T*
+(- Backlog: `TODO.md`.) Tj
+T*
+(- Instalação e operação: `README.md` e `docs/INSTALL.md`.) Tj
+T*
+(- Modelo de domínio: `docs/modelo-dominio.md`.) Tj
+T*
+(- Validação local: `src/api` compilado com sucesso; builds de `src/frontend`, `src/admin` e) Tj
+T*
+(`src/android` bloqueados pelos impedimentos descritos na seção 7.) Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000230 00000 n 
+0000003629 00000 n 
+0000003755 00000 n 
+0000007248 00000 n 
+0000007374 00000 n 
+0000007860 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+7986
+%%EOF

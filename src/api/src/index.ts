@@ -1,5 +1,6 @@
 import express, { type NextFunction, type Request, type Response } from "express";
-import { Pool } from "pg";
+import { pool } from "./database";
+import { port } from './environment';
 
 interface ReportCreate {
   name?: string | null;
@@ -20,14 +21,6 @@ interface ValidationErrorItem {
   type: string;
 }
 
-const port = Number.parseInt(process.env.PORT ?? "8000", 10);
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number.parseInt(process.env.DB_PORT ?? "5432", 10),
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-});
 
 const databaseReady = pool.query(`
   CREATE TABLE IF NOT EXISTS reports (

@@ -1,13 +1,9 @@
-FROM python
+FROM node:alpine
 
 WORKDIR /app
 
-RUN apt-get -y update && apt-get -y install build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
-
 COPY . .
 
-COPY .env.example .env
+# RUN npm ci
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD uvicorn app.main:app --host 0.0.0.0 --port 8000
+CMD ["npm", "start"]

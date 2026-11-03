@@ -1,0 +1,185 @@
+openapi: 3.0.3
+info:
+  title: Fatec Women API
+  description: API for health checks and violence reports.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+paths:
+  /:
+    get:
+      summary: Check API status
+      operationId: root
+      responses:
+        '200':
+          description: API is available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+  /health:
+    get:
+      summary: Check API and database health
+      operationId: health
+      responses:
+        '200':
+          description: API and database are available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '500':
+          description: Database health check failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+  /reports:
+    get:
+      summary: List reports
+      operationId: readReports
+      responses:
+        '200':
+          description: Reports ordered from newest to oldest
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Report'
+    post:
+      summary: Create a report
+      operationId: createReport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportCreate'
+      responses:
+        '201':
+          description: Report created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        '422':
+          description: Request validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+components:
+  schemas:
+    ReportCreate:
+      type: object
+      required:
+        - details
+      properties:
+        name:
+          type: string
+          nullable: true
+        image_url:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+        details:
+          type: string
+    Report:
+      allOf:
+        - $ref: '#/components/schemas/ReportCreate'
+        - type: object
+          required:
+            - id
+            - created_at
+          properties:
+            id:
+              type: integer
+              format: int64
+            created_at:
+              type: string
+              format: date-time
+    StatusResponse:
+      type: object
+      required:
+        - status
+        - data
+        - message
+      properties:
+        status:
+          type: string
+          example: ok
+        data:
+          type: object
+          nullable: true
+          example: null
+        message:
+          type: string
+          nullable: true
+          example: null
+    HealthResponse:
+      type: object
+      required:
+        - status
+        - data
+        - message
+      properties:
+        status:
+          type: string
+          example: ok
+        data:
+          type: object
+          required:
+            - datetime
+            - now
+          properties:
+            datetime:
+              type: string
+              format: date-time
+            now:
+              type: string
+        message:
+          type: string
+          nullable: true
+          example: null
+    HTTPError:
+      type: object
+      required:
+        - detail
+      properties:
+        detail:
+          type: string
+    ValidationError:
+      type: object
+      required:
+        - detail
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationErrorItem'
+    ValidationErrorItem:
+      type: object
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items:
+            oneOf:
+              - type: string
+              - type: integer
+        msg:
+          type: string
+        type:
+          type: string

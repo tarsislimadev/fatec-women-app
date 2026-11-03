@@ -4,41 +4,41 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 4 0 obj
-<< /Length 3347 >>
+<< /Length 3479 >>
 stream
 BT
 /F1 10.5 Tf
 48 790 Td
 13 TL
-( Relatório de Acompanhamento) Tj
+(  Relatório de Acompanhamento) Tj
 T*
 () Tj
 T*
-( 1. Identificação) Tj
+(    1. Identificação) Tj
 T*
 () Tj
 T*
-(- **Projeto ou processo:** Fatec Women) Tj
+(- Projeto ou processo: Fatec Women) Tj
 T*
-(- **Período:** 03/11/2026) Tj
+(- Período: 03/11/2026) Tj
 T*
-(- **Data de emissão:** 03/11/2026) Tj
+(- Data de emissão: 03/11/2026) Tj
 T*
-(- **Tipo e periodicidade:** Relatório de atividades, acompanhamento diário) Tj
+(- Tipo e periodicidade: Relatório de atividades, acompanhamento diário) Tj
 T*
-(- **Fonte principal:** estado do repositório, histórico Git, documentação, backlog e) Tj
+(- Fonte principal: estado do repositório, histórico Git, documentação, backlog e validações) Tj
 T*
-(validações executadas localmente) Tj
+(executadas localmente) Tj
 T*
 () Tj
 T*
-( 2. Objetivo) Tj
+(    2. Objetivo) Tj
 T*
 () Tj
 T*
@@ -48,7 +48,7 @@ T*
 T*
 () Tj
 T*
-( 3. Planejamento) Tj
+(    3. Planejamento) Tj
 T*
 () Tj
 T*
@@ -60,9 +60,9 @@ T*
 T*
 (Configurar deploy da API | Concluída | Configuração Vercel/Supabase e validação registrada) Tj
 T*
-(Manter documentação de instalação e domínio | Concluída | `README.md`, `docs/INSTALL.md` e) Tj
+(Manter documentação de instalação e domínio | Concluída | README.md, docs/INSTALL.md e) Tj
 T*
-(`docs/modelo-dominio.md`) Tj
+(docs/modelo-dominio.md) Tj
 T*
 (Criar testes automatizados da API | Próxima atividade | Testes para health check,) Tj
 T*
@@ -78,57 +78,57 @@ T*
 T*
 () Tj
 T*
-( 4. Acompanhamento) Tj
+(    4. Acompanhamento) Tj
 T*
 () Tj
 T*
 (Atividade | Responsável | Status | Evidência | Observações) Tj
 T*
-(API TypeScript/Express com `/`, `/health`, `GET /reports` e `POST /reports` | Equipe do) Tj
+(API TypeScript/Express com /, /health, GET /reports e POST /reports | Equipe do projeto |) Tj
 T*
-(projeto | Concluído | `src/api/src/index.ts` | A API compilou com `npm run build`.) Tj
+(Concluído | src/api/src/index.ts | A API compilou com npm run build.) Tj
 T*
 (Persistência inicial de relatos em PostgreSQL | Equipe do projeto | Concluído |) Tj
 T*
-(`src/database/001-create-tables.sql` e `src/api/src/index.ts` | O esquema também contém) Tj
+(src/database/001-create-tables.sql e src/api/src/index.ts | O esquema também contém usuários e) Tj
 T*
-(usuários e mensagens, ainda sem endpoints correspondentes.) Tj
+(mensagens, ainda sem endpoints correspondentes.) Tj
 T*
-(Contrato OpenAPI | Equipe do projeto | Concluído | `src/api/swagger.yaml` | Deve ser mantido) Tj
+(Contrato OpenAPI | Equipe do projeto | Concluído | src/api/swagger.yaml | Deve ser mantido) Tj
 T*
 (sincronizado com a implementação.) Tj
 T*
-(Interfaces web e painel administrativo | Equipe do projeto | Em andamento | `src/frontend/` e) Tj
+(Interfaces web e painel administrativo | Equipe do projeto | Em andamento | src/frontend/ e) Tj
 T*
-(`src/admin/` | Os projetos estão estruturados, mas os builds não foram executados por) Tj
+(src/admin/ | Os projetos estão estruturados, mas os builds não foram executados por) Tj
 T*
 (dependências locais ausentes e diretórios sem permissão de escrita.) Tj
 T*
-(Aplicativo Android | Equipe do projeto | Em andamento | `src/android/` | O wrapper Gradle) Tj
+(Aplicativo Android | Equipe do projeto | Em andamento | src/android/ | O wrapper Gradle) Tj
 T*
 (iniciou, mas o build foi bloqueado pela ausência de Android SDK configurado.) Tj
 T*
-(Autenticação e autorização | Equipe do projeto | Pendente | `TODO.md` e) Tj
+(Autenticação e autorização | Equipe do projeto | Pendente | TODO.md e docs/modelo-dominio.md |) Tj
 T*
-(`docs/modelo-dominio.md` | `GET /reports` ainda está público segundo o código e a) Tj
+(GET /reports ainda está público segundo o código e a documentação.) Tj
 T*
-(documentação.) Tj
+(Testes automatizados e integração PostgreSQL | Equipe do projeto | Pendente | TODO.md e) Tj
 T*
-(Testes automatizados e integração PostgreSQL | Equipe do projeto | Pendente | `TODO.md` e) Tj
-T*
-(`docs/daily-board/20261103.md` | Não há suíte automatizada dedicada configurada no) Tj
-T*
-(repositório.) Tj
+(docs/daily-board/20261103.md | Não há suíte automatizada dedicada configurada no repositório.) Tj
 T*
 () Tj
 T*
-( 5. Comparação entre planejado e realizado) Tj
+(    5. Comparação entre planejado e realizado) Tj
 T*
 () Tj
 T*
 (As entregas de infraestrutura e do fluxo mínimo de relatos avançaram: a API está documentada,) Tj
 T*
 (possui conexão PostgreSQL, validação básica do payload e foi compilada com sucesso. O) Tj
+T*
+(histórico recente também registra a configuração do deploy e das variáveis de ambiente na) Tj
+T*
+(Vercel/Supabase; essa informação é documental e não foi revalidada externamente neste) Tj
 T*
 ET
 endstream
@@ -137,16 +137,12 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
 endobj
 6 0 obj
-<< /Length 3441 >>
+<< /Length 3324 >>
 stream
 BT
 /F1 10.5 Tf
 48 790 Td
 13 TL
-(histórico recente também registra a configuração do deploy e das variáveis de ambiente na) Tj
-T*
-(Vercel/Supabase; essa informação é documental e não foi revalidada externamente neste) Tj
-T*
 (acompanhamento.) Tj
 T*
 () Tj
@@ -169,7 +165,7 @@ T*
 T*
 () Tj
 T*
-( 6. Resultados e mudanças percebidas) Tj
+(    6. Resultados e mudanças percebidas) Tj
 T*
 () Tj
 T*
@@ -193,7 +189,7 @@ T*
 T*
 () Tj
 T*
-( 7. Riscos, desvios e impedimentos) Tj
+(    7. Riscos, desvios e impedimentos) Tj
 T*
 () Tj
 T*
@@ -207,17 +203,17 @@ T*
 T*
 (Regras de validação incompletas | Dados inválidos ou excessivos podem ser aceitos | Pendente) Tj
 T*
-(Frontend/admin sem dependências instaláveis neste ambiente | Build não verificado; `npm ci`) Tj
+(Frontend/admin sem dependências instaláveis neste ambiente | Build não verificado; npm ci) Tj
 T*
-(encontrou `EACCES` em `node_modules` | Requer ajuste de permissões ou ambiente limpo) Tj
+(encontrou EACCES em node_modules | Requer ajuste de permissões ou ambiente limpo) Tj
 T*
-(Android sem Android SDK configurado | `assembleDebug` não pôde concluir | Requer configurar) Tj
+(Android sem Android SDK configurado | assembleDebug não pôde concluir | Requer configurar) Tj
 T*
-(`ANDROID_HOME` ou `local.properties`) Tj
+(ANDROID_HOME ou local.properties) Tj
 T*
 () Tj
 T*
-( 8. Recomendações e próximos passos) Tj
+(    8. Recomendações e próximos passos) Tj
 T*
 () Tj
 T*
@@ -251,11 +247,15 @@ T*
 T*
 () Tj
 T*
-( 9. Anexos e evidências) Tj
+(    9. Anexos e evidências) Tj
 T*
 () Tj
 T*
 (- Histórico recente: commits de 03/11/2026, incluindo API, documentação e configuração de) Tj
+T*
+(ambiente.) Tj
+T*
+(- Registro diário: docs/daily-board/20261103.md.) Tj
 T*
 ET
 endstream
@@ -264,25 +264,21 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
 endobj
 8 0 obj
-<< /Length 435 >>
+<< /Length 342 >>
 stream
 BT
 /F1 10.5 Tf
 48 790 Td
 13 TL
-(ambiente.) Tj
+(- Backlog: TODO.md.) Tj
 T*
-(- Registro diário: `docs/daily-board/20261103.md`.) Tj
+(- Instalação e operação: README.md e docs/INSTALL.md.) Tj
 T*
-(- Backlog: `TODO.md`.) Tj
+(- Modelo de domínio: docs/modelo-dominio.md.) Tj
 T*
-(- Instalação e operação: `README.md` e `docs/INSTALL.md`.) Tj
+(- Validação local: src/api compilado com sucesso; builds de src/frontend, src/admin e) Tj
 T*
-(- Modelo de domínio: `docs/modelo-dominio.md`.) Tj
-T*
-(- Validação local: `src/api` compilado com sucesso; builds de `src/frontend`, `src/admin` e) Tj
-T*
-(`src/android` bloqueados pelos impedimentos descritos na seção 7.) Tj
+(src/android bloqueados pelos impedimentos descritos na seção 7.) Tj
 T*
 ET
 endstream
@@ -297,13 +293,13 @@ xref
 0000000064 00000 n 
 0000000133 00000 n 
 0000000230 00000 n 
-0000003629 00000 n 
-0000003755 00000 n 
-0000007248 00000 n 
-0000007374 00000 n 
-0000007860 00000 n 
+0000003761 00000 n 
+0000003887 00000 n 
+0000007263 00000 n 
+0000007389 00000 n 
+0000007782 00000 n 
 trailer
 << /Size 10 /Root 1 0 R >>
 startxref
-7986
+7908
 %%EOF

@@ -29,11 +29,27 @@ services:
     container_name: api
     ports:
       - '8000:8000'
-    volumes:
-      - './src/api:/app'
+    environment:
+      - 'PORT=8000'
+      - 'DB_HOST=database'
+      - 'DB_PORT=5432'
+      - 'DB_USER=fatec'
+      - 'DB_PASSWORD=fatec'
+      - 'DB_NAME=fatec'
 
-  # psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
-  #   image: postgres:18-alpine
-  #   container_name: psql
-  #   depends_on:
-  #     - database
+  database:
+    image: postgres:18-alpine
+    container_name: database
+    environment:
+      POSTGRES_USER: fatec
+      POSTGRES_PASSWORD: fatec
+      POSTGRES_DB: fatec
+    ports:
+      - '5432:5432'
+    volumes:
+      - './src/database:/docker-entrypoint-initdb.d'
+  psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
+    image: postgres:18-alpine
+    container_name: psql
+    depends_on:
+      - database

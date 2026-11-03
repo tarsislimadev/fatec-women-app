@@ -2,6 +2,7 @@
   "recommendations": [
     "dart-code.flutter",
     "ms-python.python",
-    "ms-python.vscode-python-envs"
+    "ms-python.vscode-python-envs",
+    "msjsdiag.vscode-react-native"
   ]
 }

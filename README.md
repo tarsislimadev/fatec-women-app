@@ -18,7 +18,7 @@ O ecossistema do aplicativo foi projetado para oferecer segurança e agilidade n
 O projeto adota uma abordagem modular para facilitar a manutenção e a escalabilidade de cada componente:
 
 - Cliente Android ([`src/android`](src/android)): Aplicativo nativo desenvolvido para as vítimas, focado em usabilidade, acessibilidade e segurança.
-- API Python ([`src/api`](src/api)): Backend robusto que centraliza a lógica de negócio, a validação de dados e a comunicação com o banco de dados.
+- API TypeScript/Express ([`src/api`](src/api)): Backend que centraliza a lógica de negócio, a validação de dados e a comunicação com o PostgreSQL.
 - Frontend Web ([`src/frontend`](src/frontend)): Interface moderna para visualização de dados e relatórios.
 - Painel Admin ([`src/admin`](src/admin)): Módulo especializado para a gestão administrativa dos casos e usuários.
 
@@ -28,10 +28,11 @@ O projeto adota uma abordagem modular para facilitar a manutenção e a escalabi
 Para configurar o ambiente de desenvolvimento, certifique-se de ter instalado:
 - Git: Para controle de versão e clonagem do código.
 - Docker & Docker Compose: Para executar a API localmente.
+- Node.js e npm: Para compilar e executar a API TypeScript/Express fora do Docker.
 - Android Studio: Para compilação e execução do aplicativo mobile.
 
 ### 1. Backend local
-O Docker Compose executa a API Python para desenvolvimento local. A implantação de produção não usa o banco de dados local: a API publicada na Vercel se conecta ao PostgreSQL hospedado no Supabase.
+O Docker Compose executa a API TypeScript/Express e o PostgreSQL para desenvolvimento local. Para executar a API diretamente, use Node.js na pasta `src/api`:
 
 ```bash
 # Clone o repositório
@@ -43,11 +44,18 @@ docker compose up -d --build
 ```
 Após a inicialização, valide a API acessando `http://localhost:8000/health`. Para desenvolvimento local, configure as variáveis de banco em `src/api/.env` conforme o ambiente PostgreSQL que será utilizado. Não versionar esse arquivo nem credenciais reais.
 
+```bash
+cd src/api
+npm ci
+npm run build
+npm start
+```
+
 ### 2. Implantação
 
 O ambiente publicado é composto por:
 
-- **API:** deploy da aplicação Python em um projeto da [Vercel](https://vercel.com/).
+- **API:** deploy da aplicação TypeScript/Express em um projeto da [Vercel](https://vercel.com/), com `src/api` como diretório raiz.
 - **Banco de dados:** PostgreSQL gerenciado pelo [Supabase](https://supabase.com/).
 
 No projeto da Vercel, defina o diretório `src/api` como raiz da API e cadastre as variáveis de ambiente do banco:
@@ -60,13 +68,13 @@ No projeto da Vercel, defina o diretório `src/api` como raiz da API e cadastre 
 | `DB_USER` | Usuário do banco |
 | `DB_PASSWORD` | Senha do banco |
 
-Use os valores da conexão disponibilizados no painel do Supabase. As variáveis devem ser configuradas nos ambientes necessários da Vercel (Production, Preview e/ou Development), sem colocar senhas no repositório. Após o deploy, valide a integração acessando:
+Use os valores da conexão disponibilizados no painel do Supabase. No projeto `fatec-women-api`, as variáveis são configuradas como secrets nos ambientes Production, Preview e Development, sem colocar senhas no repositório. O projeto usa `npm ci` para instalar dependências e `npm run build` para compilar o TypeScript. Após o deploy, valide a integração acessando:
 
 ```text
-https://<dominio-da-api-na-vercel>/health
+https://fatec-women-api.vercel.app/health
 ```
 
-O endpoint `/health` verifica a conectividade da API com o banco. Para criar ou atualizar as tabelas, execute o script SQL versionado em [`src/database/001-create-tables.sql`](src/database/001-create-tables.sql) no SQL Editor do Supabase.
+O endpoint `/health` verifica a conectividade da API com o banco. A especificação OpenAPI está em [`src/api/swagger.yaml`](src/api/swagger.yaml). Para criar ou atualizar as tabelas, execute o script SQL versionado em [`src/database/001-create-tables.sql`](src/database/001-create-tables.sql) no SQL Editor do Supabase.
 
 ### 3. Aplicativo Android
 O aplicativo é desenvolvido em Kotlin/Java. Para executá-lo:

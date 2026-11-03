@@ -1,0 +1,72 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+4 0 obj
+<< /Length 3131 >>
+stream
+BT /F2 18 Tf 48 794.0 Td (Daily Board - 03-11-2026) Tj ET
+BT /F2 13 Tf 48 760.0 Td (Git Log \(Alterações Recentes\)) Tj ET
+BT /F1 10 Tf 48 731.0 Td (- API:) Tj ET
+BT /F1 10 Tf 48 717.0 Td (- Implementada a API TypeScript/Express em src/api/src/index.ts.) Tj ET
+BT /F1 10 Tf 48 703.0 Td (- Adicionados os endpoints /, /health, GET /reports e POST /reports.) Tj ET
+BT /F1 10 Tf 48 689.0 Td (- Integrada a API ao PostgreSQL usando o pacote pg.) Tj ET
+BT /F1 10 Tf 48 675.0 Td (- Adicionada validação de payload para criação de relatos.) Tj ET
+BT /F1 10 Tf 48 661.0 Td (- Configurados package.json, package-lock.json, tsconfig.json e o Dockerfile da API.) Tj ET
+BT /F1 10 Tf 48 647.0 Td (- Criado o contrato OpenAPI em src/api/swagger.yaml.) Tj ET
+BT /F1 10 Tf 48 623.0 Td (- Deploy e infraestrutura:) Tj ET
+BT /F1 10 Tf 48 609.0 Td (- Criado o projeto fatec-women-api na Vercel com src/api como diretório raiz.) Tj ET
+BT /F1 10 Tf 48 595.0 Td (- Configurados os comandos npm ci, npm run build e npm start.) Tj ET
+BT /F1 10 Tf 48 581.0 Td (- Conectado o deploy ao PostgreSQL do projeto fatec-women-app no Supabase.) Tj ET
+BT /F1 10 Tf 48 567.0 Td (- Configuradas as variáveis DB_HOST, DB_PORT, DB_NAME, DB_USER e DB_PASSWORD como secrets) Tj ET
+BT /F1 10 Tf 48 553.0 Td (nos ambientes Production, Preview e Development.) Tj ET
+BT /F1 10 Tf 48 539.0 Td (- Deploy de produção validado como pronto em https://fatec-women-api.vercel.app.) Tj ET
+BT /F1 10 Tf 48 515.0 Td (- Documentação:) Tj ET
+BT /F1 10 Tf 48 501.0 Td (- Atualizados README.md e docs/INSTALL.md para refletir a API TypeScript/Express, o fluxo) Tj ET
+BT /F1 10 Tf 48 487.0 Td (local, a Vercel, o Supabase e a especificação OpenAPI.) Tj ET
+BT /F2 13 Tf 48 463.0 Td (Validação) Tj ET
+BT /F1 10 Tf 48 434.0 Td (- Compilação TypeScript executada com npm run build.) Tj ET
+BT /F1 10 Tf 48 420.0 Td (- Verificação de alterações executada com git diff --check.) Tj ET
+BT /F1 10 Tf 48 406.0 Td (- Deploy de produção da Vercel concluído com sucesso.) Tj ET
+BT /F2 13 Tf 48 382.0 Td (Tarefas do Trello) Tj ET
+BT /F2 11 Tf 48 353.0 Td ([Concluido] Concluído) Tj ET
+BT /F1 10 Tf 48 327.0 Td ([x] Configurar Schema do Banco e Endpoints da API para Registro de Casos.) Tj ET
+BT /F1 10 Tf 48 313.0 Td ([x] Verificar a conectividade básica da API com um endpoint de health check.) Tj ET
+BT /F1 10 Tf 48 299.0 Td ([x] Configurar o deploy da API na Vercel.) Tj ET
+BT /F1 10 Tf 48 285.0 Td ([x] Configurar as variáveis de ambiente do Supabase na Vercel.) Tj ET
+BT /F1 10 Tf 48 271.0 Td ([x] Atualizar a documentação de instalação e implantação.) Tj ET
+BT /F2 11 Tf 48 247.0 Td ([A Fazer - Proximas] A Fazer \(Próximas\)) Tj ET
+BT /F1 10 Tf 48 221.0 Td ([ ] Criar testes automatizados da API.) Tj ET
+BT /F1 10 Tf 48 207.0 Td ([ ] Validar entradas da API com regras completas para detalhes, coordenadas, URLs e limites) Tj ET
+BT /F1 10 Tf 48 193.0 Td (de campos.) Tj ET
+BT /F1 10 Tf 48 179.0 Td ([ ] Implementar cadastro, login, autenticação e autorização de usuários.) Tj ET
+BT /F1 10 Tf 48 165.0 Td ([ ] Executar testes de integração ponta a ponta entre Android, API e banco de dados.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Type /Catalog /Pages 3 0 R >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000271 00000 n 
+0000003453 00000 n 
+0000003589 00000 n 
+trailer
+<< /Size 7 /Root 6 0 R >>
+startxref
+3638
+%%EOF

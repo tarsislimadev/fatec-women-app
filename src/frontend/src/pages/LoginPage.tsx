@@ -1,66 +1,28 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login attempt:', { email, password });
-    // Mock authentication
-    navigate('/');
-  };
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    localStorage.setItem('user', JSON.stringify({ email, name: email.split('@')[0] }));
+    navigate('/dashboard');
+  }
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          style={inputStyle} 
-          required 
-        />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          style={inputStyle} 
-          required 
-        />
-        <button type="submit" style={buttonStyle}>Login</button>
+    <section className="auth-card">
+      <span className="eyebrow">Bem-vinda de volta</span>
+      <h1>Entrar</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <label>E-mail<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required /></label>
+        <label>Senha<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required /></label>
+        <button className="button primary" type="submit">Entrar</button>
       </form>
-    </div>
+      <p className="form-help">Ainda não possui uma conta? <Link to="/register">Criar conta</Link></p>
+    </section>
   );
-};
-
-const formStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  maxWidth: '300px',
-  margin: '0 auto'
-};
-
-const inputStyle: React.CSSProperties = {
-  padding: '0.5rem',
-  borderRadius: '0.25rem',
-  border: '1px solid #ccc'
-};
-
-const buttonStyle: React.CSSProperties = {
-  padding: '0.5rem',
-  backgroundColor: '#db2777',
-  color: 'white',
-  border: 'none',
-  borderRadius: '0.25rem',
-  cursor: 'pointer',
-  fontWeight: 'bold'
-};
-
-export default LoginPage;
+}

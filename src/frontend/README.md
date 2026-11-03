@@ -2,13 +2,13 @@
 
 This directory contains the web-based front-end for the Fatec Women application.
 
-## Planned Architecture
+## Architecture
 - **Framework**: React.js
 - **State Management**: Context API or Redux Toolkit
 - **Styling**: CSS for full control and minimal dependencies
 - **API Integration**: Fetch API for lightweight network requests
 
-## Project Structure (Planned)
+## Project Structure
 - `src/components`: Reusable UI components (Buttons, Inputs, Modals)
 - `src/pages`: Main application views (Landing, ReportForm, ReportList, Auth)
 - `src/services`: API service layer
@@ -16,24 +16,21 @@ This directory contains the web-based front-end for the Fatec Women application.
 - `src/context`: Global state management (Auth, Theme)
 - `src/assets`: Images, icons, and global styles
 
-## Key Features to Implement
-1. **User Authentication**: Login and Registration screens.
-2. **Report Submission**: A secure form to submit reports (occurrences).
-3. **Report Listing**: A view to list submitted reports with appropriate access control.
-4. **User Profile**: Management of user data and preferences.
-5. **Admin Dashboard**: (If applicable) To manage reports and users.
+## Routes
+
+- `/`: landing page and emergency guidance.
+- `/login` and `/register`: local prototype authentication screens.
+- `/report`: report submission form.
+- `/reports`: report listing loaded from the API.
+- `/dashboard`: compatibility redirect to `/reports`.
+- `/profile`: local user profile.
+- Any unknown path displays a not-found page.
 
 ## Integration with Back-end
 The front-end will consume the endpoints provided by the Python API located in `src/api`.
 - Health check: `/health`
-- Auth: `/auth/login`, `/auth/register`
 - Reports: `/reports` (GET, POST)
 
-## Development Steps
-- [ ] Initialize project with Vite (React.js + TS)
-- [ ] Setup global Core CSS styles
-- [ ] Implement basic routing with React Router
-- [ ] Create core UI components
-- [ ] Integrate with the Python API using Fetch
-- [ ] Implement Form validation
-- [ ] Final UI/UX polishing
+The frontend uses `/api` by default. Vite proxies this path to `http://localhost:8000`
+during local development. Set `VITE_API_URL` to the deployed API origin when building
+for another environment.

@@ -1,57 +1,49 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { createReport } from '../services/api';
 
-const ReportForm = () => {
-  const [description, setDescription] = useState('');
+export default function ReportForm() {
   const navigate = useNavigate();
+  const [details, setDetails] = useState('');
+  const [name, setName] = useState('');
+  const [location, setLocation] = useState('');
+  const [error, setError] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Submitting report:', { description });
-    alert('Report submitted successfully!');
-    navigate('/');
-  };
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    setError('');
+    setSubmitting(true);
+    try {
+      await createReport({
+        details,
+        ...(name.trim() ? { name: name.trim() } : {}),
+        ...(location.trim() ? { image_url: location.trim() } : {}),
+      });
+      navigate('/reports', { state: { submitted: true } });
+    } catch (requestError) {
+      setError(requestError instanceof Error ? requestError.message : 'Não foi possível enviar o registro.');
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
-    <div>
-      <h2>Submit a Report</h2>
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <textarea 
-          placeholder="Describe the occurrence..." 
-          value={description} 
-          onChange={(e) => setDescription(e.target.value)} 
-          style={textareaStyle} 
-          required 
-        />
-        <button type="submit" style={buttonStyle}>Submit</button>
+    <section className="content-card form-card">
+      <span className="eyebrow">Registro confidencial</span>
+      <h1>Registrar ocorrência</h1>
+      <p className="muted">Conte apenas o que se sentir confortável em compartilhar. O campo de nome é opcional.</p>
+      <form className="form" onSubmit={handleSubmit}>
+        <label>Seu nome (opcional)<input value={name} onChange={(event) => setName(event.target.value)} /></label>
+        <label>Link de evidência (opcional)<input type="url" value={location} onChange={(event) => setLocation(event.target.value)} placeholder="https://..." /></label>
+        <label>O que aconteceu?<textarea value={details} onChange={(event) => setDetails(event.target.value)} required minLength={10} rows={7} placeholder="Descreva a situação..." /></label>
+        {error && <p className="form-error" role="alert">{error}</p>}
+        <div className="actions">
+          <Link className="button secondary" to="/">Cancelar</Link>
+          <button className="button primary" type="submit" disabled={submitting}>{submitting ? 'Enviando...' : 'Enviar registro'}</button>
+        </div>
       </form>
-    </div>
+    </section>
   );
-};
-
-const formStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  maxWidth: '600px',
-  margin: '0 auto'
-};
-
-const textareaStyle: React.CSSProperties = {
-  padding: '0.5rem',
-  borderRadius: '0.25rem',
-  border: '1px solid #ccc',
-  minHeight: '150px'
-};
-
-const buttonStyle: React.CSSProperties = {
-  padding: '0.5rem',
-  backgroundColor: '#db2777',
-  color: 'white',
-  border: 'none',
-  borderRadius: '0.25rem',
-  cursor: 'pointer',
-  fontWeight: 'bold'
-};
-
-export default ReportForm;
+}

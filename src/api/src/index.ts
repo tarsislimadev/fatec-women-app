@@ -29,6 +29,18 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
 });
 
+const databaseReady = pool.query(`
+  CREATE TABLE IF NOT EXISTS reports (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    image_url TEXT,
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION,
+    details TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  )
+`);
+
 const app = express();
 app.use(express.json());
 
@@ -38,6 +50,7 @@ app.get("/", (_request, response) => {
 
 app.get("/health", async (_request, response, next) => {
   try {
+    await databaseReady;
     const result = await pool.query<{ now: Date }>("SELECT NOW() AS now");
     response.json({
       status: "ok",
@@ -54,6 +67,7 @@ app.get("/health", async (_request, response, next) => {
 
 app.get("/reports", async (_request, response, next) => {
   try {
+    await databaseReady;
     const result = await pool.query<Report>(`
       SELECT id, name, image_url, latitude, longitude, details, created_at
       FROM reports
@@ -74,6 +88,7 @@ app.post("/reports", async (request, response, next) => {
 
   const report = request.body as ReportCreate;
   try {
+    await databaseReady;
     const result = await pool.query<Report>(
       `
         INSERT INTO reports (name, image_url, latitude, longitude, details)

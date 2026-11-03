@@ -7,6 +7,10 @@
 		"trello": {
 			"url": "https://mcp.trello.com/v1",
 			"type": "http"
+		},
+		"vercel": {
+			"url": "https://mcp.vercel.com",
+			"type": "http"
 		}
 	},
 	"inputs": []

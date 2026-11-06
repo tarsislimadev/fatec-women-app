@@ -29,9 +29,17 @@ jobs:
           sudo find ./src/android -name "*.aab"
 
       - name: Upload APK to GitHub Releases
+        id: release
         uses: softprops/action-gh-release@v3
         with:
           files: src/android/**/**/**/**/**/**.apk
           tag_name: v${{ env.CUR_DATE_TIME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send Releases link to Telegram
+        uses: appleboy/telegram-action@v0.1.2
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: "New APK Release: v${{ env.CUR_DATE_TIME }}\n\nDownload link: ${{ steps.release.outputs.upload_url }}"

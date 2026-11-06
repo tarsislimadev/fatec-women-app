@@ -35,9 +35,5 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . .
 
-# Ensure the gradle wrapper is executable
-RUN chmod +x ./gradlew
-
 # Compile the APK (Debug build)
-# --no-daemon is critical for Docker to prevent the JVM from hanging 
-CMD ["./gradlew", "assembleDebug", "--no-daemon"]
+CMD chmod +x ./gradlew && ./gradlew assembleDebug && find -name '*.apk'

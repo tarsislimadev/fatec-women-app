@@ -42,4 +42,6 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: "New APK Release: v${{ env.CUR_DATE_TIME }}\n\nDownload link: ${{ steps.release.outputs.upload_url }}"
+          message: |
+            New APK Release: v${{ env.CUR_DATE_TIME }}
+            Download link: ${{ steps.release.outputs.upload_url }}

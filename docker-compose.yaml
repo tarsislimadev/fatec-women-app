@@ -4,7 +4,7 @@ services:
   #   build: './src/frontend'
   #   container_name: frontend
   #   environment:
-  #     - 'PORT=3000'
+  #     PORT: 3000
   #   ports:
   #     - '3000:3000'
   #   volumes:
@@ -17,7 +17,7 @@ services:
     build: './src/admin'
     container_name: admin
     environment:
-      - 'PORT=8080'
+      PORT: 8080
     ports:
       - '8080:8080'
     volumes:
@@ -32,12 +32,12 @@ services:
     ports:
       - '8000:8000'
     environment:
-      - 'PORT=8000'
-      - 'DB_HOST=database'
-      - 'DB_PORT=5432'
-      - 'DB_USER=fatec'
-      - 'DB_PASSWORD=fatec'
-      - 'DB_NAME=fatec'
+      PORT: 8000
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_USER: fatec
+      DB_PASSWORD: fatec
+      DB_NAME: fatec
     depends_on:
       - database
 

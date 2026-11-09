@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "description": "This directory contains the web-based front-end for the Fatec Women application.",
+  "name": "fatec-women-app",
+  "version": "0.1.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

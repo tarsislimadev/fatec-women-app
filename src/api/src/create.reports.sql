@@ -1,0 +1,10 @@
+-- 
+CREATE TABLE IF NOT EXISTS reports (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  image_url TEXT,
+  latitude DOUBLE PRECISION,
+  longitude DOUBLE PRECISION,
+  details TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

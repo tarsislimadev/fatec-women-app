@@ -5,6 +5,7 @@
     "ms-python.vscode-python-envs",
     "msjsdiag.vscode-react-native",
     "vscjava.vscode-gradle",
-    "oracle.oracle-java"
+    "oracle.oracle-java",
+    "dbaeumer.vscode-eslint"
   ]
 }

@@ -12,6 +12,7 @@ services:
   #     - /app/node_modules
   #   depends_on:
   #     - 'api'
+
   admin:
     build: './src/admin'
     container_name: admin
@@ -24,6 +25,7 @@ services:
       - /app/node_modules
     depends_on:
       - 'api'
+
   api:
     build: './src/api'
     container_name: api
@@ -36,6 +38,8 @@ services:
       - 'DB_USER=fatec'
       - 'DB_PASSWORD=fatec'
       - 'DB_NAME=fatec'
+    depends_on:
+      - database
 
   database:
     image: postgres:18-alpine

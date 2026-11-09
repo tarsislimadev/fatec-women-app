@@ -2,11 +2,10 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY . .
+
 RUN npm ci
 
-COPY tsconfig.json ./
-COPY src ./src
-RUN npm run build
+# RUN npm run build
 
-CMD ["npm", "start"]
+CMD npm run dev

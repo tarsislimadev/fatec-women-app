@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
   title: Fatec Women API
-  description: API for health checks and violence reports.
-  version: 1.0.0
+  description: API for health checks, user authentication and violence reports.
+  version: 1.1.0
 servers:
   - url: http://localhost:8000
     description: Local development server
@@ -35,10 +35,121 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPError'
+  /auth/register:
+    post:
+      summary: Register a new user
+      operationId: registerUser
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRegister'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '409':
+          description: Email or phone already registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /auth/login:
+    post:
+      summary: Authenticate user and obtain a JWT
+      operationId: loginUser
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthLogin'
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /auth/me:
+    get:
+      summary: Get current authenticated user
+      operationId: getCurrentUser
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Current user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+  /auth/face-login:
+    post:
+      summary: Authenticate via facial recognition (placeholder)
+      operationId: faceLogin
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaceLogin'
+      responses:
+        '200':
+          description: Face authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: User not found or face verification failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
   /reports:
     get:
-      summary: List reports
+      summary: List reports (authenticated users see their own; admins see all)
       operationId: readReports
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Reports ordered from newest to oldest
@@ -51,6 +162,8 @@ paths:
     post:
       summary: Create a report
       operationId: createReport
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -64,14 +177,187 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Report'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
         '422':
           description: Request validation failed
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationError'
+  /reports/{id}:
+    patch:
+      summary: Update report status (admin only)
+      operationId: updateReportStatus
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Report identifier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusUpdate'
+      responses:
+        '200':
+          description: Status updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusUpdateResponse'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '403':
+          description: Insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '404':
+          description: Report not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /reports/{id}/history:
+    get:
+      summary: Get report status change history
+      operationId: readReportHistory
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Report identifier
+      responses:
+        '200':
+          description: Status history entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StatusHistoryEntry'
+        '401':
+          description: Authentication required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '403':
+          description: Access denied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
+        '404':
+          description: Report not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPError'
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
+    User:
+      type: object
+      required:
+        - id
+        - name
+        - email
+        - role
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+          enum: [user, admin]
+        is_anonymous:
+          type: boolean
+    AuthRegister:
+      type: object
+      required:
+        - name
+        - email
+        - phone
+        - password
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        password:
+          type: string
+          minLength: 6
+        role:
+          type: string
+          enum: [user, admin]
+    AuthLogin:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    AuthResponse:
+      type: object
+      required:
+        - user
+        - token
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        token:
+          type: string
+        face_verified:
+          type: boolean
+    FaceLogin:
+      type: object
+      required:
+        - email
+        - face_image
+      properties:
+        email:
+          type: string
+        face_image:
+          type: string
+          description: Base64-encoded face image
     ReportCreate:
       type: object
       required:
@@ -99,14 +385,69 @@ components:
         - type: object
           required:
             - id
+            - user_id
+            - status
+            - is_anonymous
             - created_at
           properties:
             id:
               type: integer
               format: int64
+            user_id:
+              type: integer
+              format: int64
+            status:
+              type: string
+              enum: [pendente, em_andamento, resolvido, encerrado]
+            is_anonymous:
+              type: boolean
             created_at:
               type: string
               format: date-time
+            user_name:
+              type: string
+              nullable: true
+    StatusUpdate:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum: [pendente, em_andamento, resolvido, encerrado]
+    StatusUpdateResponse:
+      type: object
+      required:
+        - id
+        - status
+      properties:
+        id:
+          type: integer
+        status:
+          type: string
+    StatusHistoryEntry:
+      type: object
+      required:
+        - id
+        - report_id
+        - status
+        - changed_at
+      properties:
+        id:
+          type: integer
+        report_id:
+          type: integer
+        status:
+          type: string
+        changed_by:
+          type: integer
+          nullable: true
+        changed_by_name:
+          type: string
+          nullable: true
+        changed_at:
+          type: string
+          format: date-time
     StatusResponse:
       type: object
       required:

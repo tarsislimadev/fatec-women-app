@@ -11,16 +11,16 @@
 - [x] Definir a API oficial: escolher Node/Express ou Python/FastAPI, remover a ambiguidade do `docker-compose.yaml` e apontar o admin para a implementação oficial.
 	- Critério de conclusão: uma única API é usada no desenvolvimento e está documentada no README.
 
-- [ ] Implementar cadastro e login de usuário.
+- [x] Implementar cadastro e login de usuário.
 	- Critério de conclusão: credenciais são persistidas com senha protegida, e o login retorna uma sessão ou token válido.
 
-- [ ] Implementar autenticação e autorização.
+- [x] Implementar autenticação e autorização.
 	- Critério de conclusão: endpoints protegidos rejeitam requisições sem credenciais; a consulta de relatos não fica pública por padrão.
 
-- [ ] Definir a política de anonimato do relato.
+- [x] Definir a política de anonimato do relato.
 	- Critério de conclusão: o sistema documenta quando o relato pode ser anônimo, quais dados são coletados e quem pode acessá-los.
 
-- [ ] Validar entradas da API.
+- [x] Validar entradas da API.
 	- Critério de conclusão: detalhes vazios, coordenadas inválidas, URLs inválidas e campos acima do limite são rejeitados com resposta consistente.
 
 ## P1 - Produto e domínio
@@ -32,13 +32,13 @@
 	- [x] Campo de detalhes obrigatório.
 	- Critério de conclusão: o formulário envia os campos aceitos pela API e apresenta estados de sucesso e erro.
 
-- [ ] Implementar listagem de relatos com controle de acesso.
+- [x] Implementar listagem de relatos com controle de acesso.
 	- Critério de conclusão: relatos são ordenados pelo mais recente, exibem localização e imagem somente quando disponíveis e não expõem dados para usuários não autorizados.
 
-- [ ] Adicionar ciclo de acompanhamento do relato.
+- [x] Adicionar ciclo de acompanhamento do relato.
 	- Critério de conclusão: cada relato possui status, histórico de alterações e responsável pelo encaminhamento.
 
-- [ ] Avaliar vínculo entre relato e usuário.
+- [x] Avaliar vínculo entre relato e usuário.
 	- Critério de conclusão: a decisão sobre vínculo obrigatório, opcional ou anônimo é refletida no modelo de dados e na documentação de domínio.
 
 - [ ] Implementar perfil e mensagens somente se fizerem parte do escopo aprovado.
@@ -46,13 +46,13 @@
 
 ## P1 - Qualidade
 
-- [ ] Criar testes automatizados da API.
+- [x] Criar testes automatizados da API.
 	- Critério de conclusão: existem testes para health check, login, autorização, criação de relato, validação e listagem.
 
-- [ ] Executar testes de integração com PostgreSQL.
+- [x] Executar testes de integração com PostgreSQL.
 	- Critério de conclusão: o fluxo de criação e consulta é validado contra o banco em ambiente reproduzível.
 
-- [ ] Padronizar respostas e tratamento de erros.
+- [x] Padronizar respostas e tratamento de erros.
 	- Critério de conclusão: erros de validação, autenticação, autorização e banco retornam status HTTP e formato documentados.
 
 ## P2 - Dados e serviços de apoio
@@ -68,7 +68,7 @@
 - [x] Otimizar os Dockerfiles.
 	- Critério de conclusão: dependências são instaladas de forma determinística, imagens usam estágios adequados quando necessário e o container inicia sem depender de volume de código.
 
-- [ ] Atualizar a documentação das sprints.
+- [x] Atualizar a documentação das sprints.
 	- Critério de conclusão: reviews não marcam como concluídas funcionalidades que ainda não existem no código.
 
 - [x] Documentar o modelo de domínio.

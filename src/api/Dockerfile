@@ -1,13 +1,29 @@
-FROM node:alpine
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY . .
-
+COPY package.json package-lock.json ./
 RUN npm ci
 
-# RUN npm run build
+COPY . .
+RUN npm run build
 
-# CMD npm run dev
+FROM node:20-alpine
 
-CMD npx tsx watch src/index.ts
+WORKDIR /app
+
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 fatecuser
+
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/src/create.reports.sql ./src/create.reports.sql
+
+USER fatecuser
+
+ENV PORT=8000
+
+EXPOSE 8000
+
+CMD ["node", "dist/index.js"]

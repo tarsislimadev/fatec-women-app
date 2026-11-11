@@ -3,3 +3,8 @@
 **/__pycache__/
 **/**/node_modules/
 **/node_modules/
+src/api/dist/app.js
+src/api/dist/app.test.js
+src/api/dist/database.js
+src/api/dist/environment.js
+src/api/dist/index.js

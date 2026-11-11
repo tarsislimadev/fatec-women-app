@@ -1,48 +1,24 @@
 # AGENTS.md
 
-## Visão Geral do Projeto
-Este repositório contém um protótipo full-stack para o app Fatec Women:
+## Layout
+- `src/api`: TypeScript/Express API (entry `src/index.ts`, app/routes in `src/app.ts`, DB in `src/database.ts`, spec in `swagger.yaml`). Production runs on Vercel with Supabase PostgreSQL (see `docs/INSTALL.md`, `CONFIGURE.md`).
+- `src/admin`, `src/frontend`: Vite + React apps (separate `package.json` scripts).
+- `src/android`: native Android app (`settings.gradle.kts` includes `:app`, namespace/app code under `app/src/main/java/br/gov/sp/fatec/women/`).
+- `src/database/001-create-tables.sql`: canonical local/schema SQL (mounted by Compose). Keep schema changes in `src/database/`.
+- Other instruction sources: `.github/copilot-instructions.md`, `.github/instructions/*.instructions.md`.
 
-- O código do admin fica em [src/admin](src/admin)
-- O código do cliente Android fica em [src/android](src/android)
-- O front-end web fica em [src/frontend](src/frontend)
-- A API Python fica em [src/api](src/api)
-- A orquestração de serviços locais é definida em [docker-compose.yaml](docker-compose.yaml)
-- A configuração e o uso do projeto são descritos em [README.md](README.md) e [docs/INSTALL.md](docs/INSTALL.md)
+## Commands
+- Local stack (root): `docker compose up -d --build` — starts `admin`, `api`, `database` (Postgres); `frontend` service is commented out in `docker-compose.yaml`. API health: `http://localhost:8000/health`.
+- API (`src/api`): `npm ci`, `npm run build` (`tsc`), `npm start` (`node dist/index.js`), `npm run dev` (`tsx watch src/index.ts`). Dockerfile runs `npx tsx watch src/index.ts` (dev-style) despite build script existing.
+- Admin/Frontend: run in package dir — `npm install` (or `npm ci` if lock is trusted), `npm run dev`, `npm run build`, `npm run preview`; admin also has `npm run lint`.
+- Android (`src/android`): open in Android Studio or Windows CLI `.\gradlew.bat assembleDebug`. Release APK CI (`.github/workflows/release-apk.yml`) builds via `docker compose -f docker-compose.mobile.yaml run --rm android sh /app/gradlew assembleDebug`.
 
-Mantenha as alterações limitadas à camada relevante: o código do app Android deve permanecer no projeto Android, as alterações da API devem ficar no serviço Python, e as alterações de esquema devem ser adicionadas na pasta do banco de dados.
+## Conventions & gotchas
+- Preserve layer boundaries: Android-only logic in `src/android`, API in `src/api`, schema/DB assets in `src/database`; do not leak DB concerns into clients or client concerns into API.
+- Keep API endpoints simple/status-oriented; align with `src/api/swagger.yaml`. `app.ts` reads `create.reports.sql` from CWD and runs it on startup—mind working directory/path when changing runtime or container behavior.
+- Local DB defaults/env: `DB_HOST/PORT/NAME/USER/PASSWORD` (Compose uses `database`/`fatec`; defaults in `src/api/src/database.ts`). Production credentials are Vercel/Supabase secrets—never commit them.
+- `docker-compose.yaml` includes a `psql` helper service: `docker compose run psql bash` then `psql -h database -p 5432 -U fatec -d fatec -W`.
+- No automated test suite is relied on in-repo (Android has example unit/instrumented stubs). Prefer smoke checks: API `/health` after DB/API changes; Gradle build/load for Android; `npm run build`/`lint` (admin) for web changes when relevant.
 
-## Desenvolvimento Local
-Use a raiz do repositório para iniciar os serviços:
-
-```bash
-docker compose up -d --build
-```
-
-Isso inicia o serviço local da API. Em produção, a API é executada na Vercel e se conecta ao PostgreSQL hospedado no Supabase; o banco de produção não é iniciado pelo Docker Compose. A API local expõe verificações de integridade em `http://localhost:8000/health`.
-
-Para o desenvolvimento Android, abra a pasta do projeto [src/android](src/android) no Android Studio. No Windows, o repositório inclui um script Gradle wrapper em [src/android/gradlew.bat](src/android/gradlew.bat); para builds via linha de comando, use:
-
-```powershell
-cd src/android
-./gradlew.bat assembleDebug
-```
-
-## Convenções
-- Prefira alterações pequenas e direcionadas em vez de refatorações amplas.
-- Não misture lógica específica do Android na API ou lógica de banco de dados na camada do app.
-- Mantenha os endpoints da API simples e orientados a status; a API atual é um serviço Python leve, não um framework robusto.
-- Se uma alteração afetar a configuração ou o onboarding, atualize a documentação relevante em vez de duplicá-la em outro lugar.
-
-## Validação
-Não há testes automatizados dedicados configurados neste repositório no momento, portanto a validação deve ser leve e prática:
-
-- Para alterações na API ou banco de dados: inicie a API local com Docker e verifique se o endpoint de health responde. Para validar produção, use o endpoint `/health` da Vercel e as credenciais configuradas no ambiente do Supabase.
-- Para alterações no Android: execute o build Gradle relevante ou verifique se o projeto ainda carrega corretamente no Android Studio.
-- Prefira verificações rápidas (smoke checks) a reescritas dispendiosas.
-
-## Arquivos principais para revisar primeiro
-- [README.md](README.md)
-- [docker-compose.yaml](docker-compose.yaml)
-- [src/android/settings.gradle.kts](src/android/settings.gradle.kts)
-- [src/api/app/main.py](src/api/app/main.py)
+## Docs
+- Start with `README.md`, `CONFIGURE.md`, `docs/INSTALL.md`, `docs/modelo-dominio.md`, `docker-compose.yaml`. Keep docs in sync when setup/onboarding behavior changes.

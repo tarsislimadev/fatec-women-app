@@ -17,22 +17,22 @@ O que foi feito o que não feito até o momento
 | ID | História | Situação | Por quê |
 |---|---|---|---|
 | US03 | Implantação do container do banco de dados PostgreSQL com um script de inicialização automatizado (001-create-tables.sql). | Não Feito | Para automatizar a inicialização do projeto em produção |
-| US08 | Implementar cadastro e login de usuário | Não Feito | Parte do backlog da Sprint 3 |
-| US09 | Implementar autenticação e autorização | Não Feito | Parte do backlog da Sprint 3 |
-| US10 | Implementar Autenticação por Reconhecimento Facial | Não Feito | Parte do backlog da Sprint 3 |
-| US11 | Definir a política de anonimato do relato | Não Feito | Parte do backlog da Sprint 3 |
-| US12 | Validar entradas da API | Não Feito | Parte do backlog da Sprint 3 |
-| US13 | Padronizar respostas e tratamento de erros | Não Feito | Parte do backlog da Sprint 3 |
-| US14 | Criar testes automatizados da API e integração com PostgreSQL | Não Feito | Parte do backlog da Sprint 3 |
-| US15 | Implementar listagem de relatos com controle de acesso | Não Feito | Parte do backlog da Sprint 3 |
-| US16 | Adicionar ciclo de acompanhamento do relato | Não Feito | Parte do backlog da Sprint 3 |
-| US17 | Avaliar vínculo entre relato e usuário | Não Feito | Parte do backlog da Sprint 3 |
-| US18 | Refinamento de UI/UX dos formulários | Não Feito | Parte do backlog da Sprint 3 |
-| US19 | Testes de Integração End-to-End | Não Feito | Parte do backlog da Sprint 3 |
-| US20 | Auditoria de Segurança de Dados | Não Feito | Parte do backlog da Sprint 3 |
-| US21 | Otimização de Dockerfiles | Não Feito | Parte do backlog da Sprint 3 |
-| US22 | Documentação de uso para o usuário final | Não Feito | Parte do backlog da Sprint 3 |
-| US23 | Atualização da documentação das sprints | Não Feito | Parte do backlog da Sprint 3 |
+| US08 | Implementar cadastro e login de usuário | Feito | Implementado na Sprint 3 |
+| US09 | Implementar autenticação e autorização | Feito | Implementado na Sprint 3 |
+| US10 | Implementar Autenticação por Reconhecimento Facial | Feito | Implementado na Sprint 3 |
+| US11 | Definir a política de anonimato do relato | Feito | Implementado na Sprint 3 |
+| US12 | Validar entradas da API | Feito | Implementado na Sprint 3 |
+| US13 | Padronizar respostas e tratamento de erros | Feito | Implementado na Sprint 3 |
+| US14 | Criar testes automatizados da API e integração com PostgreSQL | Feito | Implementado na Sprint 3 |
+| US15 | Implementar listagem de relatos com controle de acesso | Feito | Implementado na Sprint 3 |
+| US16 | Adicionar ciclo de acompanhamento do relato | Feito | Implementado na Sprint 3 |
+| US17 | Avaliar vínculo entre relato e usuário | Feito | Implementado na Sprint 3 |
+| US18 | Refinamento de UI/UX dos formulários | Feito | Implementado na Sprint 3 |
+| US19 | Testes de Integração End-to-End | Feito | Implementado na Sprint 3 |
+| US20 | Auditoria de Segurança de Dados | Feito | Implementado na Sprint 3 |
+| US21 | Otimização de Dockerfiles | Feito | Implementado na Sprint 3 |
+| US22 | Documentação de uso para o usuário final | Feito | Implementado na Sprint 3 |
+| US23 | Atualização da documentação das sprints | Feito | Implementado na Sprint 3 |
 
 O que mudou do Planning 2 para cá
 
@@ -54,22 +54,22 @@ Product Backlog
 
 | ID | Item | Prioridade | Esforço | Sprint | Status |
 |---|---|---|---|---|---|
-| US08 | Implementação de cadastro e login de usuário | Alta (P0) | 8 | 3 | Pendente |
-| US09 | Implementação de autenticação e autorização | Alta (P0) | 8 | 3 | Pendente |
-| US10 | Implementação de Autenticação por Reconhecimento Facial | Média (P1) | 12 | 3 | Pendente |
-| US11 | Definição e implementação da política de anonimato do relato | Alta (P0) | 6 | 3 | Pendente |
-| US12 | Validação rigorosa de entradas da API | Alta (P0) | 6 | 3 | Pendente |
-| US13 | Padronização de respostas e tratamento de erros | Média (P1) | 6 | 3 | Pendente |
-| US14 | Criação de testes automatizados da API e integração com PostgreSQL | Média (P1) | 8 | 3 | Pendente |
-| US15 | Listagem de relatos com controle de acesso | Média (P1) | 6 | 3 | Pendente |
-| US16 | Adição de ciclo de acompanhamento do relato | Média (P1) | 8 | 3 | Pendente |
-| US17 | Avaliação de vínculo entre relato e usuário | Média (P1) | 6 | 3 | Pendente |
-| US18 | Refinamento de UI/UX dos formulários | Baixa (P2) | 6 | 3 | Pendente |
-| US19 | Testes de Integração End-to-End | Alta (P0) | 8 | 3 | Pendente |
-| US20 | Auditoria de Segurança de Dados | Alta (P0) | 8 | 3 | Pendente |
-| US21 | Otimização de Dockerfiles | Baixa (P2) | 4 | 3 | Pendente |
-| US22 | Documentação de uso para o usuário final | Baixa (P2) | 6 | 3 | Pendente |
-| US23 | Atualização da documentação das sprints | Baixa (P2) | 4 | 3 | Pendente |
+| US08 | Implementação de cadastro e login de usuário | Alta (P0) | 8 | 3 | Concluído |
+| US09 | Implementação de autenticação e autorização | Alta (P0) | 8 | 3 | Concluído |
+| US10 | Implementação de Autenticação por Reconhecimento Facial | Média (P1) | 12 | 3 | Concluído |
+| US11 | Definição e implementação da política de anonimato do relato | Alta (P0) | 6 | 3 | Concluído |
+| US12 | Validação rigorosa de entradas da API | Alta (P0) | 6 | 3 | Concluído |
+| US13 | Padronização de respostas e tratamento de erros | Média (P1) | 6 | 3 | Concluído |
+| US14 | Criação de testes automatizados da API e integração com PostgreSQL | Média (P1) | 8 | 3 | Concluído |
+| US15 | Listagem de relatos com controle de acesso | Média (P1) | 6 | 3 | Concluído |
+| US16 | Adição de ciclo de acompanhamento do relato | Média (P1) | 8 | 3 | Concluído |
+| US17 | Avaliação de vínculo entre relato e usuário | Média (P1) | 6 | 3 | Concluído |
+| US18 | Refinamento de UI/UX dos formulários | Baixa (P2) | 6 | 3 | Concluído |
+| US19 | Testes de Integração End-to-End | Alta (P0) | 8 | 3 | Concluído |
+| US20 | Auditoria de Segurança de Dados | Alta (P0) | 8 | 3 | Concluído |
+| US21 | Otimização de Dockerfiles | Baixa (P2) | 4 | 3 | Concluído |
+| US22 | Documentação de uso para o usuário final | Baixa (P2) | 6 | 3 | Concluído |
+| US23 | Atualização da documentação das sprints | Baixa (P2) | 4 | 3 | Concluído |
 
 Sprint Backlog 3
 

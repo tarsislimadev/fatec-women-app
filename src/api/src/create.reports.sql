@@ -1,4 +1,4 @@
--- 
+-- reports (idempotent bootstrap used by API startup)
 CREATE TABLE IF NOT EXISTS reports (
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -19,3 +19,4 @@ CREATE TABLE IF NOT EXISTS report_status_history (
   changed_by INT REFERENCES users(id) ON DELETE SET NULL,
   changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+

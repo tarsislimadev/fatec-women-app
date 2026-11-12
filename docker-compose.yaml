@@ -38,6 +38,7 @@ services:
       DB_USER: fatec
       DB_PASSWORD: fatec
       DB_NAME: fatec
+      JWT_SECRET: dev-local-secret-change-me
     depends_on:
       - database
 

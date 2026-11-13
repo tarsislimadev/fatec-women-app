@@ -1,5 +1,5 @@
 class API {
-  BASE_URL = getenv('BASE_URL', 'http://localhost:8000');
+  BASE_URL = 'http://localhost:8000' // getenv('BASE_URL', 'http://localhost:8000');
 
   request(endpoint, options = {}) {
     return fetch(`${this.BASE_URL}${endpoint}`, options)

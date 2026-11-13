@@ -3,6 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val baseUrl = providers.environmentVariable("BASE_URL")
+    .map { it.trim().trimEnd('/') }
+    .filter { it.isNotEmpty() }
+    .orElse("https://fatec-women-api.vercel.app")
+    .get()
+
 android {
     namespace = "br.gov.sp.fatec.women"
     compileSdk {
@@ -19,6 +25,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "\"${baseUrl.replace("\\", "\\\\").replace("\"", "\\\"")}\"")
     }
 
     buildTypes {
@@ -34,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     
     packaging {

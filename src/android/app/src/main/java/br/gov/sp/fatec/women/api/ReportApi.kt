@@ -1,5 +1,6 @@
 package br.gov.sp.fatec.women.api
 
+import br.gov.sp.fatec.women.BuildConfig
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -10,8 +11,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 object ReportApi {
-    private const val BASE_URL = "http://172.16.1.163:8000"
-    // private const val BASE_URL = "https://fatec-women-api.vercel.app"
+    private const val BASE_URL = BuildConfig.BASE_URL
 
     suspend fun submitReport(name: String?, imageUrl: String?, location: String?, details: String): Result<String> {
         return withContext(Dispatchers.IO) {

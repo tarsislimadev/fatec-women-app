@@ -46,7 +46,7 @@ interface AuthenticatedRequest extends Request {
   user?: User;
 }
 
-const databaseReady = pool.query(fs.readFileSync(path.resolve(process.cwd(), "src", "create.reports.sql"), "utf8"));
+const databaseReady = pool.query(fs.readFileSync(path.resolve(process.cwd(), "src", "001-create-tables.sql"), "utf8"));
 
 const JWT_SECRET: string = process.env.JWT_SECRET ?? "JWT_SECRET_1234";
 if (!JWT_SECRET) {

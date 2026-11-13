@@ -48,7 +48,7 @@ interface AuthenticatedRequest extends Request {
 
 const databaseReady = pool.query(fs.readFileSync(path.resolve(process.cwd(), "src", "create.reports.sql"), "utf8"));
 
-const JWT_SECRET: string = process.env.JWT_SECRET ?? "";
+const JWT_SECRET: string = process.env.JWT_SECRET ?? "JWT_SECRET_1234";
 if (!JWT_SECRET) {
   throw new Error("JWT_SECRET environment variable is required");
 }

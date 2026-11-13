@@ -65,3 +65,15 @@ Para builds via linha de comando (Windows):
 cd src/android
 ./gradlew.bat assembleDebug
 ```
+
+A URL da API é configurada no momento do build pela variável de ambiente `BASE_URL`.
+Se ela não for definida, o app usa `https://fatec-women-api.vercel.app`:
+
+```powershell
+cd src/android
+$env:BASE_URL = "http://172.16.1.163:8000"
+./gradlew.bat assembleDebug
+```
+
+O valor é incorporado ao APK durante a compilação. Para alterar a API usada pelo
+app, gere um novo APK com a variável definida.

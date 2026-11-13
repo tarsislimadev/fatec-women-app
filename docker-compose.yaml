@@ -1,47 +1,5 @@
 services:
 
-  # frontend:
-  #   build: './src/frontend'
-  #   container_name: frontend
-  #   environment:
-  #     PORT: 3000
-  #   ports:
-  #     - '3000:3000'
-  #   volumes:
-  #     - './src/frontend:/app'
-  #     - /app/node_modules
-  #   depends_on:
-  #     - 'api'
-
-  admin:
-    build: './src/admin'
-    container_name: admin
-    environment:
-      PORT: 8080
-    ports:
-      - '8080:8080'
-    volumes:
-      - './src/admin:/app'
-      - /app/node_modules
-    depends_on:
-      - 'api'
-
-  api:
-    build: './src/api'
-    container_name: api
-    ports:
-      - '8000:8000'
-    environment:
-      PORT: 8000
-      DB_HOST: database
-      DB_PORT: 5432
-      DB_USER: fatec
-      DB_PASSWORD: fatec
-      DB_NAME: fatec
-      JWT_SECRET: dev-local-secret-change-me
-    depends_on:
-      - database
-
   database:
     image: postgres:18-alpine
     container_name: database
@@ -50,9 +8,10 @@ services:
       POSTGRES_PASSWORD: fatec
       POSTGRES_DB: fatec
     ports:
-      - '5432:5432'
+      - 5432:5432
     volumes:
-      - './src/database:/docker-entrypoint-initdb.d'
+      - ./src/database:/docker-entrypoint-initdb.d
+
   psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
     image: postgres:18-alpine
     container_name: psql
@@ -60,3 +19,41 @@ services:
       - tools
     depends_on:
       - database
+
+  api:
+    build: ./src/api
+    container_name: api
+    ports:
+      - 8000:8000
+    environment:
+      PORT: 8000
+      DATABASE_URL: postgresql://fatec:fatec@database:5432/fatec
+      JWT_SECRET: dev-local-secret-change-me
+    depends_on:
+      - database
+
+  admin:
+    build: ./src/admin
+    container_name: admin
+    environment:
+      PORT: 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./src/admin:/app
+      - /app/node_modules
+    depends_on:
+      - api
+
+  frontend:
+    build: ./src/frontend
+    container_name: frontend
+    environment:
+      PORT: 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src/frontend:/app
+      - /app/node_modules
+    depends_on:
+      - api

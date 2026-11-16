@@ -19,8 +19,8 @@ class API {
     });
   }
 
-  auth(username, password) {
-    return this.post('/auth/login', { username, password });
+  auth(email, password) {
+    return this.post('/auth/login', { email, password });
   }
 }
 

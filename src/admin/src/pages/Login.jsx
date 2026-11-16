@@ -1,75 +1,85 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import API from '../utils/api'; // Assuming you have an API utility for making requests
+import API from '../utils/api';
+import Container from '../components/Container';
+import Form from '../components/Form';
+import Button from '../components/Button';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, we would call an API here.
-    // For this prototype, we simulate a successful login.
-    if (email && password) {
-      // localStorage.setItem('user', JSON.stringify({ email, name: email.split('@')[0] }));
-      const resp = await API.auth(email, password);
-      // fixme: handle auth response
-      navigate('/dashboard');
+    setError('');
+    
+    if (!email || !password) {
+      setError('Please fill in all fields');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const auth = await API.auth(email, password);
+      if (auth.success) {
+        localStorage.setItem('user', JSON.stringify(auth.user));
+        navigate('/dashboard');
+      } else {
+        setError(auth.message || 'Login failed');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('An error occurred during login. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      fontFamily: 'sans-serif',
-      backgroundColor: '#f5f5f5'
-    }}>
-      <form onSubmit={handleSubmit} style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '15px',
-        width: '300px',
-        padding: '30px',
-        border: 'none',
-        borderRadius: '12px',
-        backgroundColor: 'white',
-        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-      }}>
-        <h2 style={{ textAlign: 'center', color: '#e91e63' }}>Fatec Women Login</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{ padding: '12px', borderRadius: '6px', border: '1px solid #ddd' }}
-          required
-        />
-        <button type="submit" style={{
-          padding: '12px',
-          background: '#e91e63',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          fontSize: '16px'
-        }}>
-          Login
-        </button>
-      </form>
-    </div>
+    <Container centered className="layout">
+      <Form
+        title="Fatec Women Login"
+        subtitle="Sign in to access the dashboard"
+        onSubmit={handleSubmit}
+      >
+        <Form.Field label="Email">
+          <Form.Input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            autoComplete="email"
+            disabled={loading}
+          />
+        </Form.Field>
+
+        <Form.Field label="Password">
+          <Form.Input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            autoComplete="current-password"
+            disabled={loading}
+          />
+        </Form.Field>
+
+        {error && (
+          <div className="badge badge-danger" style={{ justifySelf: 'center' }}>
+            {error}
+          </div>
+        )}
+
+        <Button type="submit" variant="primary" className="w-full" disabled={loading}>
+          {loading ? 'Signing in...' : 'Login'}
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

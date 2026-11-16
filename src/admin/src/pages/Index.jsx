@@ -1,17 +1,27 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import Container from '../components/Container';
+import Card from '../components/Card';
+import Button from '../components/Button';
 
 const Index = () => {
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>
-      <h1>Welcome to Fatec Women App</h1>
-      <p>Helping women report and track domestic violence.</p>
-      <div style={{ marginTop: '20px' }}>
-        <Link to="/login" style={{ padding: '10px 20px', background: '#e91e63', color: 'white', textDecoration: 'none', borderRadius: '5px' }}>
-          Login to Dashboard
-        </Link>
-      </div>
-    </div>
+    <Container centered className="layout">
+      <Card className="max-w-md">
+        <div className="text-center">
+          <h1 className="card-title" style={{ fontSize: '28px', marginBottom: '16px' }}>
+            Welcome to Fatec Women App
+          </h1>
+          <p className="mb-3" style={{ fontSize: '16px', color: 'var(--text)' }}>
+            Helping women report and track domestic violence.
+          </p>
+          <Link to="/login">
+            <Button variant="primary" className="w-full">
+              Login to Dashboard
+            </Button>
+          </Link>
+        </div>
+      </Card>
+    </Container>
   );
 };
 

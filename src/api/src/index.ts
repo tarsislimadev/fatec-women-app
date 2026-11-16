@@ -1,9 +1,11 @@
-import { port } from './environment';
-import { pool } from './database';
-import { app } from './app';
+import { PORT } from "./config/env";
+import { pool } from "./database";
+import { app } from "./app";
+import { initDatabase } from "./database";
 
-const server = app.listen(port, () => {
-  console.log(`Fatec Women API listening on port ${port}`);
+const server = app.listen(PORT, async () => {
+  await initDatabase();
+  console.log(`Fatec Women API listening on port ${PORT}`);
 });
 
 const shutdown = async () => {

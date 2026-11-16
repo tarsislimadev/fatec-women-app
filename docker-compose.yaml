@@ -9,8 +9,6 @@ services:
       POSTGRES_DB: fatec
     ports:
       - 5432:5432
-    volumes:
-      - ./src/database:/docker-entrypoint-initdb.d
 
   psql: # docker compose run psql bash && psql -h database -p 5432 -U fatec -d fatec -W
     image: postgres:18-alpine
@@ -27,7 +25,11 @@ services:
       - 8000:8000
     environment:
       PORT: 8000
-      DATABASE_URL: postgresql://fatec:fatec@database:5432/fatec
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_NAME: fatec
+      DB_USER: fatec
+      DB_PASSWORD: fatec
       JWT_SECRET: dev-local-secret-change-me
     depends_on:
       - database

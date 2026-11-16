@@ -8,13 +8,11 @@ import { healthController } from "./controllers/healthController";
 import { authController } from "./controllers/authController";
 import { reportController } from "./controllers/reportController";
 import { pool } from "./database";
-import { initDatabase } from "./database";
 
 const app = express();
+
 app.use(express.json());
 app.use(cors());
-
-void initDatabase();
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,

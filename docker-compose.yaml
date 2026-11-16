@@ -1,7 +1,7 @@
 services:
 
   database:
-    image: postgres:18-alpine
+    build: ./src/database
     container_name: database
     environment:
       POSTGRES_USER: fatec

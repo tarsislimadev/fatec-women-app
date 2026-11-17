@@ -1,26 +1,18 @@
 {
   "$schema": "https://app.kilo.ai/config.json",
   "mcp": {
-		"vercel": {
-			"url": "https://mcp.vercel.com",
-      "type": "remote"
-		},
-		"github": {
+    "github": {
       "type": "remote",
-			"url": "https://api.githubcopilot.com/mcp/"
-		},
-		"trello": {
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "trello": {
       "type": "remote",
-			"url": "https://mcp.trello.com/v1"
-		},
-		"supabase": {
-      "type": "remote",
-			"url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching%2Cfeedback"
-		},
+      "url": "https://mcp.trello.com/v1"
+    },
     "devtools": {
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
       "enabled": true
     }
-	}
+  }
 }

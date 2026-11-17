@@ -6,7 +6,7 @@ EXPOSE 8000
 
 COPY . .
 
-RUN npm ci
+RUN npm i
 
 RUN npm run build
 

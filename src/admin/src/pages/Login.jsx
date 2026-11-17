@@ -24,8 +24,9 @@ const Login = () => {
     setLoading(true);
     try {
       const auth = await API.auth(email, password);
-      if (auth.success) {
-        localStorage.setItem('user', JSON.stringify(auth.user));
+      if (auth.status === 'ok' && auth.data) {
+        localStorage.setItem('user', JSON.stringify(auth.data.user));
+        if (auth.data.token) localStorage.setItem('token', auth.data.token);
         navigate('/dashboard');
       } else {
         setError(auth.message || 'Login failed');

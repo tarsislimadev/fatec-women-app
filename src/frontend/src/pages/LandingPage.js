@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from 'react-router-dom';
+export default function LandingPage() {
+    return (_jsxs("section", { className: "hero", children: [_jsxs("div", { className: "hero-copy", children: [_jsx("span", { className: "eyebrow", children: "Acolhimento e prote\u00E7\u00E3o" }), _jsx("h1", { children: "Voc\u00EA n\u00E3o est\u00E1 sozinha." }), _jsx("p", { children: "Registre uma ocorr\u00EAncia com seguran\u00E7a e acompanhe o atendimento da rede de prote\u00E7\u00E3o \u00E0 mulher." }), _jsxs("div", { className: "actions", children: [_jsx(Link, { className: "button primary", to: "/report", children: "Registrar ocorr\u00EAncia" }), _jsx(Link, { className: "button secondary", to: "/login", children: "Acessar minha conta" })] })] }), _jsxs("aside", { className: "safety-card", children: [_jsx("strong", { children: "Precisa de ajuda agora?" }), _jsx("p", { children: "Em situa\u00E7\u00E3o de risco imediato, procure um local seguro e ligue para o 190." }), _jsx(Link, { to: "/report", children: "Quero fazer um registro \u2192" })] })] }));
+}
+//# sourceMappingURL=LandingPage.js.map

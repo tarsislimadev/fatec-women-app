@@ -25,7 +25,7 @@ export default function AppLayout() {
             <button className="link-button" onClick={signOut}>Sair</button>
           ) : null}
         </nav>
-        {isLoggedIn && <span className="user-chip">{user.name || user.email}</span>}
+        {isLoggedIn && <span className="user-chip">{user?.name || user?.email}</span>}
       </header>
       <main className="page-content"><Outlet /></main>
       <footer className="site-footer">Em caso de emergência, ligue 190.</footer>

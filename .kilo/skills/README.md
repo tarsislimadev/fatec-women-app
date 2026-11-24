@@ -4,6 +4,7 @@ Project-scoped skills. Each directory holds a `SKILL.md` with YAML frontmatter (
 
 | Skill | Purpose |
 | --- | --- |
+| `deploy-api-vercel` | Deploy/verify the API (`src/api`) on Vercel. |
 | `deploy-frontend-vercel` | Deploy/verify the public frontend (`src/frontend`) on Vercel. |
 | `deploy-admin-vercel` | Deploy/verify the admin panel (`src/admin`) on Vercel. |
 | `deploy-database-supabase` | Apply `src/database/*.sql` to the Supabase project. |
@@ -12,7 +13,7 @@ Project-scoped skills. Each directory holds a `SKILL.md` with YAML frontmatter (
 
 - Vercel team: `tmvdl's projects` — slug `tmvdls-projects`, id `team_UBBe5Zr1x1YLaBhJmBFuPpDF`.
 - Git repo: `tarsislimadev/fatec-women-app`, production branch `main`.
-- Vercel projects: `fatec-women-frontend` (`prj_AxG5z5C9orTCx28aXCbSCZRRYkBL`), `fatec-women-admin` (`prj_W172jw8zrT0dShXmURjHIbFlkOKy`).
+- Vercel projects: `fatec-women-frontend` (`prj_AxG5z5C9orTCx28aXCbSCZRRYkBL`), `fatec-women-admin` (`prj_W172jw8zrT0dShXmURjHIbFlkOKy`). `fatec-women-api` is **not created yet** (see `deploy-api-vercel`).
 - Supabase project: `fatec-women` (`ztbjdhjigsugvrfgbkfg`), org `nkxboeshrctsaoimthkt`, region `sa-east-1`.
 
 ## Repo-root `.vercelignore` is load-bearing
@@ -23,7 +24,7 @@ Project-scoped skills. Each directory holds a `SKILL.md` with YAML frontmatter (
 | --- | --- |
 | `npm ci` → `missing_lock_file` / `ENOENT ... package.json` | the app directory was excluded by `.vercelignore` |
 
-Keep excluded only what no Vercel project needs. Current content excludes `src/android/`, `src/database/`, `docs/`. When adding a new Vercel project, verify its root directory is not excluded.
+Keep excluded only what no Vercel project needs. Current content excludes `src/android/`, `src/database/`, `docs/`. When adding a new Vercel project, verify its root directory is not excluded. `src/api` is currently included (not excluded), which is required for the API deploy.
 
 ## SPA routing
 

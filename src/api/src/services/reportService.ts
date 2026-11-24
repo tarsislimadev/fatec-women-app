@@ -2,12 +2,11 @@ import { reportRepository } from "../repositories/reportRepository";
 import type { ReportStatus } from "../types";
 
 export const reportService = {
-  listReports: async (userId: number, isAdmin: boolean) => {
-    return reportRepository.findAll(userId, isAdmin);
+  listReports: async () => {
+    return reportRepository.findAll();
   },
 
   createReport: async (
-    userId: number,
     name: string | null,
     imageUrl: string | null,
     latitude: number | null,
@@ -16,7 +15,7 @@ export const reportService = {
     isAnonymous: boolean
   ) => {
     const report = await reportRepository.create(
-      userId,
+      null,
       name,
       imageUrl,
       latitude,
@@ -24,32 +23,25 @@ export const reportService = {
       details,
       isAnonymous
     );
-    await reportRepository.addStatusHistory(report.id, report.status, userId);
+    await reportRepository.addStatusHistory(report.id, report.status, null);
     return report;
   },
 
-  updateStatus: async (reportId: number, status: ReportStatus, changedBy: number) => {
+  updateStatus: async (reportId: number, status: ReportStatus) => {
     const existing = await reportRepository.findById(reportId);
     if (!existing) {
       throw { status: 404, message: "Report not found" };
     }
     await reportRepository.updateStatus(reportId, status);
-    await reportRepository.addStatusHistory(reportId, status, changedBy);
+    await reportRepository.addStatusHistory(reportId, status, null);
     return { id: reportId, status };
   },
 
-  getHistory: async (reportId: number, requesterId: number | undefined, requesterRole: string | undefined) => {
-    const report = await reportRepository.checkAccess(reportId);
+  getHistory: async (reportId: number) => {
+    const report = await reportRepository.findById(reportId);
     if (!report) {
       throw { status: 404, message: "Report not found" };
     }
-
-    const isOwner = requesterId !== undefined && requesterId === report.user_id;
-    const isAdmin = requesterRole === "admin";
-    if (!requesterId || (!isOwner && !isAdmin && report.is_anonymous)) {
-      throw { status: 403, message: "Access denied" };
-    }
-
     return reportRepository.findHistory(reportId);
   },
 };

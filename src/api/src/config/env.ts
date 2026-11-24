@@ -1,12 +1,5 @@
 export const PORT = Number.parseInt(process.env.PORT ?? "8000", 10);
 
-export const JWT_SECRET: string = process.env.JWT_SECRET ?? "JWT_SECRET_1234";
-if (!JWT_SECRET) {
-  throw new Error("JWT_SECRET environment variable is required");
-}
-
-export const SALT_ROUNDS = 10;
-
 export const VALID_STATUSES = ["pendente", "em_andamento", "resolvido", "encerrado"] as const;
 export type ReportStatus = (typeof VALID_STATUSES)[number];
 
